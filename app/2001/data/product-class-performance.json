@@ -1,0 +1,145 @@
+[
+  {
+    "product_class": "BOTTOMS",
+    "actual": 9396099.135435065,
+    "actual_ly": 8217662.33,
+    "fcst": 8955770.263260007,
+    "op": 8955770.263260007,
+    "yoy_pct": 14.3,
+    "fcst_var_pct": 4.9,
+    "op_var_pct": 4.9,
+    "fcst_gap_amt": 440328.87217505835
+  },
+  {
+    "product_class": "TOPS",
+    "actual": 4555564.682409089,
+    "actual_ly": 3405207.900000001,
+    "fcst": 4055461.4810399953,
+    "op": 4055461.4810399953,
+    "yoy_pct": 33.8,
+    "fcst_var_pct": 12.3,
+    "op_var_pct": 12.3,
+    "fcst_gap_amt": 500103.20136909373
+  },
+  {
+    "product_class": "LAYERS",
+    "actual": 2450954.722489179,
+    "actual_ly": 2234190.5,
+    "fcst": 2609282.879720001,
+    "op": 2609282.879720001,
+    "yoy_pct": 9.7,
+    "fcst_var_pct": -6.1,
+    "op_var_pct": -6.1,
+    "fcst_gap_amt": -158328.1572308219
+  },
+  {
+    "product_class": "OUTERWEAR",
+    "actual": 1157620.460333333,
+    "actual_ly": 936205.6499999993,
+    "fcst": 1022088.3693699997,
+    "op": 1022088.3693699997,
+    "yoy_pct": 23.7,
+    "fcst_var_pct": 13.3,
+    "op_var_pct": 13.3,
+    "fcst_gap_amt": 135532.09096333315
+  },
+  {
+    "product_class": "BRAS",
+    "actual": 516234.18366666685,
+    "actual_ly": 481670.27000000014,
+    "fcst": 509792.60598999995,
+    "op": 509792.60598999995,
+    "yoy_pct": 7.2,
+    "fcst_var_pct": 1.3,
+    "op_var_pct": 1.3,
+    "fcst_gap_amt": 6441.5776766669005
+  },
+  {
+    "product_class": "WATER",
+    "actual": 488642.86250000005,
+    "actual_ly": 47681.34999999999,
+    "fcst": 261477.29855999997,
+    "op": 261477.29855999997,
+    "yoy_pct": 924.8,
+    "fcst_var_pct": 86.9,
+    "op_var_pct": 86.9,
+    "fcst_gap_amt": 227165.56394000008
+  },
+  {
+    "product_class": "DRESSES",
+    "actual": 174860.6133333333,
+    "actual_ly": 288594.36999999994,
+    "fcst": 121524.27622999999,
+    "op": 121524.27622999999,
+    "yoy_pct": -39.4,
+    "fcst_var_pct": 43.9,
+    "op_var_pct": 43.9,
+    "fcst_gap_amt": 53336.337103333324
+  },
+  {
+    "product_class": "HEADWEAR",
+    "actual": 76763.93083333333,
+    "actual_ly": 47622.56999999998,
+    "fcst": 76754.42648000002,
+    "op": 76754.42648000002,
+    "yoy_pct": 61.2,
+    "fcst_var_pct": 0.0,
+    "op_var_pct": 0.0,
+    "fcst_gap_amt": 9.504353333308245
+  },
+  {
+    "product_class": "BAGS",
+    "actual": 76415.017,
+    "actual_ly": 51927.27000000001,
+    "fcst": 55073.62871999999,
+    "op": 55073.62871999999,
+    "yoy_pct": 47.2,
+    "fcst_var_pct": 38.8,
+    "op_var_pct": 38.8,
+    "fcst_gap_amt": 21341.388280000014
+  },
+  {
+    "product_class": "SOCKS",
+    "actual": 73714.662,
+    "actual_ly": 38700.23999999999,
+    "fcst": 72909.72426000002,
+    "op": 72909.72426000002,
+    "yoy_pct": 90.5,
+    "fcst_var_pct": 1.1,
+    "op_var_pct": 1.1,
+    "fcst_gap_amt": 804.9377399999794
+  },
+  {
+    "product_class": "UNDERWEAR",
+    "actual": 39313.36,
+    "actual_ly": 33139.85999999999,
+    "fcst": 34713.37882,
+    "op": 34713.37882,
+    "yoy_pct": 18.6,
+    "fcst_var_pct": 13.3,
+    "op_var_pct": 13.3,
+    "fcst_gap_amt": 4599.9811800000025
+  },
+  {
+    "product_class": "MISC AXS",
+    "actual": 7715.52,
+    "actual_ly": 8590.6,
+    "fcst": 4096.22606,
+    "op": 4096.22606,
+    "yoy_pct": -10.2,
+    "fcst_var_pct": 88.4,
+    "op_var_pct": 88.4,
+    "fcst_gap_amt": 3619.2939400000005
+  },
+  {
+    "product_class": "FOOTWEAR",
+    "actual": 4990.0,
+    "actual_ly": 2034.0,
+    "fcst": null,
+    "op": null,
+    "yoy_pct": 145.3,
+    "fcst_var_pct": null,
+    "op_var_pct": null,
+    "fcst_gap_amt": null
+  }
+]

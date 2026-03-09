@@ -1,0 +1,30 @@
+[
+  {
+    "channel": "ECOMMERCE",
+    "markdown_type": "Markdown",
+    "actual": 1676356.6500000001,
+    "actual_ly": 153059.85000000003,
+    "yoy_pct": 995.2
+  },
+  {
+    "channel": "ECOMMERCE",
+    "markdown_type": "Regular",
+    "actual": 9535171.349999987,
+    "actual_ly": 9505164.29,
+    "yoy_pct": 0.3
+  },
+  {
+    "channel": "FULL-PRICE",
+    "markdown_type": "Markdown",
+    "actual": 316456.61999999976,
+    "actual_ly": 65917.60999999994,
+    "yoy_pct": 380.1
+  },
+  {
+    "channel": "FULL-PRICE",
+    "markdown_type": "Regular",
+    "actual": 7490904.529999994,
+    "actual_ly": 6069085.160000004,
+    "yoy_pct": 23.4
+  }
+]

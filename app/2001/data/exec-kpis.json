@@ -1,0 +1,15 @@
+[
+  {
+    "total_demand": 19018889.149999984,
+    "total_demand_ly": 15793226.909999963,
+    "total_fcst": 17778944.558510017,
+    "total_op": 17778944.558510017,
+    "yoy_pct": 20.4,
+    "fcst_var_pct": 7.0,
+    "fcst_var_amt": 1239944.591489967,
+    "op_var_pct": 7.0,
+    "op_var_amt": 1239944.591489967,
+    "full_price_pct": 89.5,
+    "return_rate_pct": 18.0
+  }
+]

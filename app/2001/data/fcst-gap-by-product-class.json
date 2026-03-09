@@ -1,0 +1,93 @@
+[
+  {
+    "product_class": "TOPS",
+    "actual": 4555564.682409089,
+    "fcst": 4055461.4810399953,
+    "fcst_gap": 500103.20136909373,
+    "fcst_var_pct": 12.3
+  },
+  {
+    "product_class": "BOTTOMS",
+    "actual": 9396099.135435065,
+    "fcst": 8955770.263260007,
+    "fcst_gap": 440328.87217505835,
+    "fcst_var_pct": 4.9
+  },
+  {
+    "product_class": "WATER",
+    "actual": 488642.86250000005,
+    "fcst": 261477.29855999997,
+    "fcst_gap": 227165.56394000008,
+    "fcst_var_pct": 86.9
+  },
+  {
+    "product_class": "OUTERWEAR",
+    "actual": 1157620.460333333,
+    "fcst": 1022088.3693699997,
+    "fcst_gap": 135532.09096333315,
+    "fcst_var_pct": 13.3
+  },
+  {
+    "product_class": "DRESSES",
+    "actual": 174860.6133333333,
+    "fcst": 121524.27622999999,
+    "fcst_gap": 53336.337103333324,
+    "fcst_var_pct": 43.9
+  },
+  {
+    "product_class": "BAGS",
+    "actual": 76415.017,
+    "fcst": 55073.62871999999,
+    "fcst_gap": 21341.388280000014,
+    "fcst_var_pct": 38.8
+  },
+  {
+    "product_class": "BRAS",
+    "actual": 516234.18366666685,
+    "fcst": 509792.60598999995,
+    "fcst_gap": 6441.5776766669005,
+    "fcst_var_pct": 1.3
+  },
+  {
+    "product_class": "UNDERWEAR",
+    "actual": 39313.36,
+    "fcst": 34713.37882,
+    "fcst_gap": 4599.9811800000025,
+    "fcst_var_pct": 13.3
+  },
+  {
+    "product_class": "MISC AXS",
+    "actual": 7715.52,
+    "fcst": 4096.22606,
+    "fcst_gap": 3619.2939400000005,
+    "fcst_var_pct": 88.4
+  },
+  {
+    "product_class": "SOCKS",
+    "actual": 73714.662,
+    "fcst": 72909.72426000002,
+    "fcst_gap": 804.9377399999794,
+    "fcst_var_pct": 1.1
+  },
+  {
+    "product_class": "HEADWEAR",
+    "actual": 76763.93083333333,
+    "fcst": 76754.42648000002,
+    "fcst_gap": 9.504353333308245,
+    "fcst_var_pct": 0.0
+  },
+  {
+    "product_class": "LAYERS",
+    "actual": 2450954.722489179,
+    "fcst": 2609282.879720001,
+    "fcst_gap": -158328.1572308219,
+    "fcst_var_pct": -6.1
+  },
+  {
+    "product_class": "FOOTWEAR",
+    "actual": 4990.0,
+    "fcst": null,
+    "fcst_gap": null,
+    "fcst_var_pct": null
+  }
+]

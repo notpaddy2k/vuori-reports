@@ -1,0 +1,37 @@
+[
+  {
+    "end_use": "TRAVEL/COMMUTE",
+    "actual": 5306599.131727277,
+    "fcst": 4704086.87936999,
+    "fcst_gap": 602512.2523572873,
+    "fcst_var_pct": 12.8
+  },
+  {
+    "end_use": "FITNESS",
+    "actual": 6972214.386489181,
+    "fcst": 6426477.393939996,
+    "fcst_gap": 545736.9925491847,
+    "fcst_var_pct": 8.5
+  },
+  {
+    "end_use": "WATER",
+    "actual": 507864.6424999999,
+    "fcst": 279916.1430899999,
+    "fcst_gap": 227948.49941,
+    "fcst_var_pct": 81.4
+  },
+  {
+    "end_use": "OUTDOOR",
+    "actual": 524866.057,
+    "fcst": 324025.59315000003,
+    "fcst_gap": 200840.46385,
+    "fcst_var_pct": 62.0
+  },
+  {
+    "end_use": "FITNESS/LOUNGE",
+    "actual": 5707344.932283558,
+    "fcst": 6044438.54896,
+    "fcst_gap": -337093.6166764423,
+    "fcst_var_pct": -5.6
+  }
+]

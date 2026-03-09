@@ -1,0 +1,57 @@
+[
+  {
+    "end_use": "FITNESS",
+    "actual": 6972214.386489181,
+    "actual_ly": 5590710.520000004,
+    "fcst": 6426477.393939996,
+    "op": 6426477.393939996,
+    "yoy_pct": 24.7,
+    "fcst_var_pct": 8.5,
+    "op_var_pct": 8.5,
+    "fcst_gap_amt": 545736.9925491847
+  },
+  {
+    "end_use": "FITNESS/LOUNGE",
+    "actual": 5707344.932283558,
+    "actual_ly": 5662058.630000001,
+    "fcst": 6044438.54896,
+    "op": 6044438.54896,
+    "yoy_pct": 0.8,
+    "fcst_var_pct": -5.6,
+    "op_var_pct": -5.6,
+    "fcst_gap_amt": -337093.6166764423
+  },
+  {
+    "end_use": "TRAVEL/COMMUTE",
+    "actual": 5306599.131727277,
+    "actual_ly": 3870705.7699999986,
+    "fcst": 4704086.87936999,
+    "op": 4704086.87936999,
+    "yoy_pct": 37.1,
+    "fcst_var_pct": 12.8,
+    "op_var_pct": 12.8,
+    "fcst_gap_amt": 602512.2523572873
+  },
+  {
+    "end_use": "OUTDOOR",
+    "actual": 524866.057,
+    "actual_ly": 603909.0299999998,
+    "fcst": 324025.59315000003,
+    "op": 324025.59315000003,
+    "yoy_pct": -13.1,
+    "fcst_var_pct": 62.0,
+    "op_var_pct": 62.0,
+    "fcst_gap_amt": 200840.46385
+  },
+  {
+    "end_use": "WATER",
+    "actual": 507864.6424999999,
+    "actual_ly": 65842.96,
+    "fcst": 279916.1430899999,
+    "op": 279916.1430899999,
+    "yoy_pct": 671.3,
+    "fcst_var_pct": 81.4,
+    "op_var_pct": 81.4,
+    "fcst_gap_amt": 227948.49941
+  }
+]

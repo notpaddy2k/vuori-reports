@@ -1,0 +1,778 @@
+{
+  "meta": {
+    "id": "2001",
+    "title": "DTC Sales Performance",
+    "asOfDate": "2026-03-08",
+    "owner": "Planning & Analytics",
+    "description": "DTC sales performance tracker: actuals vs forecast and operating plan across Ecommerce and Full-Price channels. Covers YoY trends, product mix, full price vs markdown health, returns, and forecast gap analysis. Data scope: EC + FP channels only (no Wholesale/International). Returns limited to DMD_RTN_AMT aggregate (no cadence breakdowns or LY comparison)."
+  },
+
+  "filters": [
+    { "id": "dist_channel", "label": "Channel", "type": "multi-select", "options": ["ECOMMERCE", "FULL-PRICE"], "defaultValue": ["ECOMMERCE", "FULL-PRICE"] },
+    { "id": "gender", "label": "Gender", "type": "multi-select", "options": ["MENS", "WOMENS", "UNISEX"] },
+    { "id": "end_use", "label": "End Use", "type": "multi-select", "options": ["FITNESS", "FITNESS/LOUNGE", "TRAVEL/COMMUTE", "OUTDOOR", "WATER"] },
+    { "id": "product_class", "label": "Product Class", "type": "multi-select" }
+  ],
+
+  "dataSources": {
+    "execKpis": {
+      "outputFile": "exec-kpis.json",
+      "description": "Executive KPI metrics for latest week: total actuals, FCST variance, OP variance, YoY growth, full price %, return rate",
+      "expectedRows": "1",
+      "sql": "SELECT SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) AS total_demand, SUM(CAST(NET_MERCH_DMD_AMT_WTD_LY AS DOUBLE)) AS total_demand_ly, SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE)) AS total_fcst, SUM(CAST(OP_SLS_AMT_WTD AS DOUBLE)) AS total_op, CASE WHEN SUM(CAST(NET_MERCH_DMD_AMT_WTD_LY AS DOUBLE)) != 0 THEN ROUND((SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) - SUM(CAST(NET_MERCH_DMD_AMT_WTD_LY AS DOUBLE))) / SUM(CAST(NET_MERCH_DMD_AMT_WTD_LY AS DOUBLE)) * 100, 1) END AS yoy_pct, CASE WHEN SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE)) != 0 THEN ROUND((SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) - SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE))) / SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE)) * 100, 1) END AS fcst_var_pct, SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) - SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE)) AS fcst_var_amt, CASE WHEN SUM(CAST(OP_SLS_AMT_WTD AS DOUBLE)) != 0 THEN ROUND((SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) - SUM(CAST(OP_SLS_AMT_WTD AS DOUBLE))) / SUM(CAST(OP_SLS_AMT_WTD AS DOUBLE)) * 100, 1) END AS op_var_pct, SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) - SUM(CAST(OP_SLS_AMT_WTD AS DOUBLE)) AS op_var_amt, CASE WHEN SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) != 0 THEN ROUND(SUM(CAST(NET_MERCH_DMD_NOMD_AMT_WTD AS DOUBLE)) / SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) * 100, 1) END AS full_price_pct, CASE WHEN (SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) + SUM(CAST(DMD_RTN_AMT AS DOUBLE))) != 0 THEN ROUND(SUM(CAST(DMD_RTN_AMT AS DOUBLE)) / (SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) + SUM(CAST(DMD_RTN_AMT AS DOUBLE))) * 100, 1) END AS return_rate_pct FROM fact WHERE FISCAL_WEEK_ID = (SELECT MAX(FISCAL_WEEK_ID) FROM fact)"
+    },
+
+    "weeklyTrend": {
+      "outputFile": "weekly-trend.json",
+      "description": "Weekly trend of actuals, FCST, OP, and LY with variance percentages",
+      "expectedRows": "~5",
+      "sql": "SELECT FISCAL_WEEK_ID, FISCAL_WEEK_END_DATE AS week_end, SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) AS actual, SUM(CAST(NET_MERCH_DMD_AMT_WTD_LY AS DOUBLE)) AS actual_ly, SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE)) AS fcst, SUM(CAST(OP_SLS_AMT_WTD AS DOUBLE)) AS op, CASE WHEN SUM(CAST(NET_MERCH_DMD_AMT_WTD_LY AS DOUBLE)) != 0 THEN ROUND((SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) - SUM(CAST(NET_MERCH_DMD_AMT_WTD_LY AS DOUBLE))) / SUM(CAST(NET_MERCH_DMD_AMT_WTD_LY AS DOUBLE)) * 100, 1) END AS yoy_pct, CASE WHEN SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE)) != 0 THEN ROUND((SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) - SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE))) / SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE)) * 100, 1) END AS fcst_var_pct FROM fact GROUP BY FISCAL_WEEK_ID, FISCAL_WEEK_END_DATE ORDER BY FISCAL_WEEK_ID"
+    },
+
+    "channelPerformance": {
+      "outputFile": "channel-performance.json",
+      "description": "EC vs FP channel breakdown with actuals, FCST, OP, LY, full price/markdown split, returns",
+      "expectedRows": "2",
+      "sql": "SELECT DISTRIBUTION_CHANNEL_TEXT AS channel, SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) AS actual, SUM(CAST(NET_MERCH_DMD_AMT_WTD_LY AS DOUBLE)) AS actual_ly, SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE)) AS fcst, SUM(CAST(OP_SLS_AMT_WTD AS DOUBLE)) AS op, SUM(CAST(NET_MERCH_DMD_NOMD_AMT_WTD AS DOUBLE)) AS full_price_amt, SUM(CAST(NET_MERCH_DMD_MD_AMT_WTD AS DOUBLE)) AS markdown_amt, SUM(CAST(DMD_RTN_AMT AS DOUBLE)) AS returns_amt, SUM(CAST(NET_MERCH_DMD_QTY_WTD AS DOUBLE)) AS units, SUM(CAST(NET_MERCH_DMD_QTY_WTD_LY AS DOUBLE)) AS units_ly, CASE WHEN SUM(CAST(NET_MERCH_DMD_AMT_WTD_LY AS DOUBLE)) != 0 THEN ROUND((SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) - SUM(CAST(NET_MERCH_DMD_AMT_WTD_LY AS DOUBLE))) / SUM(CAST(NET_MERCH_DMD_AMT_WTD_LY AS DOUBLE)) * 100, 1) END AS yoy_pct, CASE WHEN SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE)) != 0 THEN ROUND((SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) - SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE))) / SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE)) * 100, 1) END AS fcst_var_pct, CASE WHEN SUM(CAST(OP_SLS_AMT_WTD AS DOUBLE)) != 0 THEN ROUND((SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) - SUM(CAST(OP_SLS_AMT_WTD AS DOUBLE))) / SUM(CAST(OP_SLS_AMT_WTD AS DOUBLE)) * 100, 1) END AS op_var_pct, CASE WHEN SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) != 0 THEN ROUND(SUM(CAST(NET_MERCH_DMD_NOMD_AMT_WTD AS DOUBLE)) / SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) * 100, 1) END AS full_price_pct, CASE WHEN (SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) + SUM(CAST(DMD_RTN_AMT AS DOUBLE))) != 0 THEN ROUND(SUM(CAST(DMD_RTN_AMT AS DOUBLE)) / (SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) + SUM(CAST(DMD_RTN_AMT AS DOUBLE))) * 100, 1) END AS return_rate_pct FROM fact WHERE FISCAL_WEEK_ID = (SELECT MAX(FISCAL_WEEK_ID) FROM fact) GROUP BY DISTRIBUTION_CHANNEL_TEXT ORDER BY actual DESC"
+    },
+
+    "channelWeeklyTrend": {
+      "outputFile": "channel-weekly-trend.json",
+      "description": "Weekly trend by channel for line chart comparison",
+      "expectedRows": "~10",
+      "sql": "SELECT FISCAL_WEEK_ID, FISCAL_WEEK_END_DATE AS week_end, DISTRIBUTION_CHANNEL_TEXT AS channel, SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) AS actual, SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE)) AS fcst, SUM(CAST(OP_SLS_AMT_WTD AS DOUBLE)) AS op, SUM(CAST(NET_MERCH_DMD_AMT_WTD_LY AS DOUBLE)) AS actual_ly FROM fact GROUP BY FISCAL_WEEK_ID, FISCAL_WEEK_END_DATE, DISTRIBUTION_CHANNEL_TEXT ORDER BY FISCAL_WEEK_ID, channel"
+    },
+
+    "genderPerformance": {
+      "outputFile": "gender-performance.json",
+      "description": "Performance by gender with actuals, FCST/OP variance, YoY, contribution",
+      "expectedRows": "3",
+      "sql": "SELECT GENDER_TEXT AS gender, SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) AS actual, SUM(CAST(NET_MERCH_DMD_AMT_WTD_LY AS DOUBLE)) AS actual_ly, SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE)) AS fcst, SUM(CAST(OP_SLS_AMT_WTD AS DOUBLE)) AS op, SUM(CAST(NET_MERCH_DMD_QTY_WTD AS DOUBLE)) AS units, SUM(CAST(NET_MERCH_DMD_QTY_WTD_LY AS DOUBLE)) AS units_ly, CASE WHEN SUM(CAST(NET_MERCH_DMD_AMT_WTD_LY AS DOUBLE)) != 0 THEN ROUND((SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) - SUM(CAST(NET_MERCH_DMD_AMT_WTD_LY AS DOUBLE))) / SUM(CAST(NET_MERCH_DMD_AMT_WTD_LY AS DOUBLE)) * 100, 1) END AS yoy_pct, CASE WHEN SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE)) != 0 THEN ROUND((SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) - SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE))) / SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE)) * 100, 1) END AS fcst_var_pct, CASE WHEN SUM(CAST(OP_SLS_AMT_WTD AS DOUBLE)) != 0 THEN ROUND((SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) - SUM(CAST(OP_SLS_AMT_WTD AS DOUBLE))) / SUM(CAST(OP_SLS_AMT_WTD AS DOUBLE)) * 100, 1) END AS op_var_pct, SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) - SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE)) AS fcst_gap_amt, SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) - SUM(CAST(OP_SLS_AMT_WTD AS DOUBLE)) AS op_gap_amt FROM fact WHERE FISCAL_WEEK_ID = (SELECT MAX(FISCAL_WEEK_ID) FROM fact) GROUP BY GENDER_TEXT ORDER BY actual DESC"
+    },
+
+    "endUsePerformance": {
+      "outputFile": "end-use-performance.json",
+      "description": "Performance by end use with actuals, FCST/OP variance, YoY, contribution",
+      "expectedRows": "~6",
+      "sql": "SELECT END_USE_TEXT AS end_use, SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) AS actual, SUM(CAST(NET_MERCH_DMD_AMT_WTD_LY AS DOUBLE)) AS actual_ly, SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE)) AS fcst, SUM(CAST(OP_SLS_AMT_WTD AS DOUBLE)) AS op, CASE WHEN SUM(CAST(NET_MERCH_DMD_AMT_WTD_LY AS DOUBLE)) != 0 THEN ROUND((SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) - SUM(CAST(NET_MERCH_DMD_AMT_WTD_LY AS DOUBLE))) / SUM(CAST(NET_MERCH_DMD_AMT_WTD_LY AS DOUBLE)) * 100, 1) END AS yoy_pct, CASE WHEN SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE)) != 0 THEN ROUND((SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) - SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE))) / SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE)) * 100, 1) END AS fcst_var_pct, CASE WHEN SUM(CAST(OP_SLS_AMT_WTD AS DOUBLE)) != 0 THEN ROUND((SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) - SUM(CAST(OP_SLS_AMT_WTD AS DOUBLE))) / SUM(CAST(OP_SLS_AMT_WTD AS DOUBLE)) * 100, 1) END AS op_var_pct, SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) - SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE)) AS fcst_gap_amt FROM fact WHERE FISCAL_WEEK_ID = (SELECT MAX(FISCAL_WEEK_ID) FROM fact) GROUP BY END_USE_TEXT HAVING SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) > 0 ORDER BY actual DESC"
+    },
+
+    "productClassPerformance": {
+      "outputFile": "product-class-performance.json",
+      "description": "Performance by product class with actuals, FCST/OP variance, YoY",
+      "expectedRows": "~13",
+      "sql": "SELECT PRODUCT_CLASS_TEXT AS product_class, SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) AS actual, SUM(CAST(NET_MERCH_DMD_AMT_WTD_LY AS DOUBLE)) AS actual_ly, SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE)) AS fcst, SUM(CAST(OP_SLS_AMT_WTD AS DOUBLE)) AS op, CASE WHEN SUM(CAST(NET_MERCH_DMD_AMT_WTD_LY AS DOUBLE)) != 0 THEN ROUND((SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) - SUM(CAST(NET_MERCH_DMD_AMT_WTD_LY AS DOUBLE))) / SUM(CAST(NET_MERCH_DMD_AMT_WTD_LY AS DOUBLE)) * 100, 1) END AS yoy_pct, CASE WHEN SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE)) != 0 THEN ROUND((SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) - SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE))) / SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE)) * 100, 1) END AS fcst_var_pct, CASE WHEN SUM(CAST(OP_SLS_AMT_WTD AS DOUBLE)) != 0 THEN ROUND((SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) - SUM(CAST(OP_SLS_AMT_WTD AS DOUBLE))) / SUM(CAST(OP_SLS_AMT_WTD AS DOUBLE)) * 100, 1) END AS op_var_pct, SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) - SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE)) AS fcst_gap_amt FROM fact WHERE FISCAL_WEEK_ID = (SELECT MAX(FISCAL_WEEK_ID) FROM fact) GROUP BY PRODUCT_CLASS_TEXT HAVING SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) > 0 ORDER BY actual DESC"
+    },
+
+    "colorVsNonColor": {
+      "outputFile": "color-vs-noncolor.json",
+      "description": "Color vs Non-Color (core neutrals) demand split with YoY comparison",
+      "expectedRows": "2",
+      "sql": "SELECT CASE WHEN NRF_COLOR_TEXT IN ('BLACK', 'WHITE', 'GREY', 'BROWN', 'BEIGE', 'KHAKI', 'TAN', 'CREAM', 'IVORY', 'TAUPE', 'CHARCOAL', 'NAVY', 'NO COLOR') THEN 'NON-COLOR (CORE)' ELSE 'COLOR' END AS color_group, SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) AS actual, SUM(CAST(NET_MERCH_DMD_AMT_WTD_LY AS DOUBLE)) AS actual_ly, CASE WHEN SUM(CAST(NET_MERCH_DMD_AMT_WTD_LY AS DOUBLE)) != 0 THEN ROUND((SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) - SUM(CAST(NET_MERCH_DMD_AMT_WTD_LY AS DOUBLE))) / SUM(CAST(NET_MERCH_DMD_AMT_WTD_LY AS DOUBLE)) * 100, 1) END AS yoy_pct FROM fact WHERE FISCAL_WEEK_ID = (SELECT MAX(FISCAL_WEEK_ID) FROM fact) GROUP BY CASE WHEN NRF_COLOR_TEXT IN ('BLACK', 'WHITE', 'GREY', 'BROWN', 'BEIGE', 'KHAKI', 'TAN', 'CREAM', 'IVORY', 'TAUPE', 'CHARCOAL', 'NAVY', 'NO COLOR') THEN 'NON-COLOR (CORE)' ELSE 'COLOR' END ORDER BY actual DESC"
+    },
+
+    "nrfColorDetail": {
+      "outputFile": "nrf-color-detail.json",
+      "description": "Demand by NRF color with YoY growth for color performance detail",
+      "expectedRows": "~15",
+      "sql": "SELECT NRF_COLOR_TEXT AS nrf_color, CASE WHEN NRF_COLOR_TEXT IN ('BLACK', 'WHITE', 'GREY', 'BROWN', 'BEIGE', 'KHAKI', 'TAN', 'CREAM', 'IVORY', 'TAUPE', 'CHARCOAL', 'NAVY', 'NO COLOR') THEN 'NON-COLOR (CORE)' ELSE 'COLOR' END AS color_group, SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) AS actual, SUM(CAST(NET_MERCH_DMD_AMT_WTD_LY AS DOUBLE)) AS actual_ly, CASE WHEN SUM(CAST(NET_MERCH_DMD_AMT_WTD_LY AS DOUBLE)) != 0 THEN ROUND((SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) - SUM(CAST(NET_MERCH_DMD_AMT_WTD_LY AS DOUBLE))) / SUM(CAST(NET_MERCH_DMD_AMT_WTD_LY AS DOUBLE)) * 100, 1) END AS yoy_pct FROM fact WHERE FISCAL_WEEK_ID = (SELECT MAX(FISCAL_WEEK_ID) FROM fact) GROUP BY NRF_COLOR_TEXT, CASE WHEN NRF_COLOR_TEXT IN ('BLACK', 'WHITE', 'GREY', 'BROWN', 'BEIGE', 'KHAKI', 'TAN', 'CREAM', 'IVORY', 'TAUPE', 'CHARCOAL', 'NAVY', 'NO COLOR') THEN 'NON-COLOR (CORE)' ELSE 'COLOR' END HAVING SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) > 0 ORDER BY actual DESC"
+    },
+
+    "fullPriceVsMarkdown": {
+      "outputFile": "fp-vs-md.json",
+      "description": "Full price vs markdown demand by week with LY comparison",
+      "expectedRows": "~5",
+      "sql": "SELECT FISCAL_WEEK_ID, FISCAL_WEEK_END_DATE AS week_end, SUM(CAST(NET_MERCH_DMD_NOMD_AMT_WTD AS DOUBLE)) AS full_price_amt, SUM(CAST(NET_MERCH_DMD_MD_AMT_WTD AS DOUBLE)) AS markdown_amt, SUM(CAST(NET_MERCH_DMD_NOMD_AMT_WTD_LY AS DOUBLE)) AS full_price_amt_ly, SUM(CAST(NET_MERCH_DMD_MD_AMT_WTD_LY AS DOUBLE)) AS markdown_amt_ly, SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE)) AS fcst, SUM(CAST(OP_SLS_AMT_WTD AS DOUBLE)) AS op, CASE WHEN SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) != 0 THEN ROUND(SUM(CAST(NET_MERCH_DMD_NOMD_AMT_WTD AS DOUBLE)) / SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) * 100, 1) END AS full_price_pct, CASE WHEN SUM(CAST(NET_MERCH_DMD_AMT_WTD_LY AS DOUBLE)) != 0 THEN ROUND(SUM(CAST(NET_MERCH_DMD_NOMD_AMT_WTD_LY AS DOUBLE)) / SUM(CAST(NET_MERCH_DMD_AMT_WTD_LY AS DOUBLE)) * 100, 1) END AS full_price_pct_ly FROM fact GROUP BY FISCAL_WEEK_ID, FISCAL_WEEK_END_DATE ORDER BY FISCAL_WEEK_ID"
+    },
+
+    "fpMdByChannel": {
+      "outputFile": "fp-md-by-channel.json",
+      "description": "Full price vs markdown split by channel for latest week",
+      "expectedRows": "4",
+      "sql": "SELECT DISTRIBUTION_CHANNEL_TEXT AS channel, MARKDOWN_TYPE_TEXT AS markdown_type, SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) AS actual, SUM(CAST(NET_MERCH_DMD_AMT_WTD_LY AS DOUBLE)) AS actual_ly, CASE WHEN SUM(CAST(NET_MERCH_DMD_AMT_WTD_LY AS DOUBLE)) != 0 THEN ROUND((SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) - SUM(CAST(NET_MERCH_DMD_AMT_WTD_LY AS DOUBLE))) / SUM(CAST(NET_MERCH_DMD_AMT_WTD_LY AS DOUBLE)) * 100, 1) END AS yoy_pct FROM fact WHERE FISCAL_WEEK_ID = (SELECT MAX(FISCAL_WEEK_ID) FROM fact) GROUP BY DISTRIBUTION_CHANNEL_TEXT, MARKDOWN_TYPE_TEXT ORDER BY channel, markdown_type"
+    },
+
+    "fpMdByGender": {
+      "outputFile": "fp-md-by-gender.json",
+      "description": "Full price vs markdown split by gender for latest week with FCST/OP comparison",
+      "expectedRows": "~6",
+      "sql": "SELECT GENDER_TEXT AS gender, SUM(CAST(NET_MERCH_DMD_NOMD_AMT_WTD AS DOUBLE)) AS full_price_amt, SUM(CAST(NET_MERCH_DMD_MD_AMT_WTD AS DOUBLE)) AS markdown_amt, SUM(CAST(NET_MERCH_DMD_NOMD_AMT_WTD_LY AS DOUBLE)) AS full_price_amt_ly, SUM(CAST(NET_MERCH_DMD_MD_AMT_WTD_LY AS DOUBLE)) AS markdown_amt_ly, SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE)) AS fcst, SUM(CAST(OP_SLS_AMT_WTD AS DOUBLE)) AS op, SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) AS total_actual, CASE WHEN SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) != 0 THEN ROUND(SUM(CAST(NET_MERCH_DMD_NOMD_AMT_WTD AS DOUBLE)) / SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) * 100, 1) END AS full_price_pct, CASE WHEN SUM(CAST(NET_MERCH_DMD_NOMD_AMT_WTD_LY AS DOUBLE)) != 0 THEN ROUND((SUM(CAST(NET_MERCH_DMD_NOMD_AMT_WTD AS DOUBLE)) - SUM(CAST(NET_MERCH_DMD_NOMD_AMT_WTD_LY AS DOUBLE))) / SUM(CAST(NET_MERCH_DMD_NOMD_AMT_WTD_LY AS DOUBLE)) * 100, 1) END AS fp_yoy_pct, CASE WHEN SUM(CAST(NET_MERCH_DMD_MD_AMT_WTD_LY AS DOUBLE)) != 0 THEN ROUND((SUM(CAST(NET_MERCH_DMD_MD_AMT_WTD AS DOUBLE)) - SUM(CAST(NET_MERCH_DMD_MD_AMT_WTD_LY AS DOUBLE))) / SUM(CAST(NET_MERCH_DMD_MD_AMT_WTD_LY AS DOUBLE)) * 100, 1) END AS md_yoy_pct FROM fact WHERE FISCAL_WEEK_ID = (SELECT MAX(FISCAL_WEEK_ID) FROM fact) GROUP BY GENDER_TEXT ORDER BY total_actual DESC"
+    },
+
+    "returnsWeekly": {
+      "outputFile": "returns-weekly.json",
+      "description": "Weekly returns trend with return rate percentage",
+      "expectedRows": "~5",
+      "sql": "SELECT FISCAL_WEEK_ID, FISCAL_WEEK_END_DATE AS week_end, SUM(CAST(DMD_RTN_AMT AS DOUBLE)) AS returns_amt, SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) AS net_demand, SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) + SUM(CAST(DMD_RTN_AMT AS DOUBLE)) AS gross_demand, CASE WHEN (SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) + SUM(CAST(DMD_RTN_AMT AS DOUBLE))) != 0 THEN ROUND(SUM(CAST(DMD_RTN_AMT AS DOUBLE)) / (SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) + SUM(CAST(DMD_RTN_AMT AS DOUBLE))) * 100, 1) END AS return_rate_pct FROM fact GROUP BY FISCAL_WEEK_ID, FISCAL_WEEK_END_DATE ORDER BY FISCAL_WEEK_ID"
+    },
+
+    "returnsByDimension": {
+      "outputFile": "returns-by-dimension.json",
+      "description": "Returns by channel, gender, product class for latest week",
+      "expectedRows": "~18",
+      "sql": "SELECT 'CHANNEL' AS dimension_type, DISTRIBUTION_CHANNEL_TEXT AS dimension_value, SUM(CAST(DMD_RTN_AMT AS DOUBLE)) AS returns_amt, SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) + SUM(CAST(DMD_RTN_AMT AS DOUBLE)) AS gross_demand, CASE WHEN (SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) + SUM(CAST(DMD_RTN_AMT AS DOUBLE))) != 0 THEN ROUND(SUM(CAST(DMD_RTN_AMT AS DOUBLE)) / (SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) + SUM(CAST(DMD_RTN_AMT AS DOUBLE))) * 100, 1) END AS return_rate_pct FROM fact WHERE FISCAL_WEEK_ID = (SELECT MAX(FISCAL_WEEK_ID) FROM fact) GROUP BY DISTRIBUTION_CHANNEL_TEXT UNION ALL SELECT 'GENDER', GENDER_TEXT, SUM(CAST(DMD_RTN_AMT AS DOUBLE)), SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) + SUM(CAST(DMD_RTN_AMT AS DOUBLE)), CASE WHEN (SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) + SUM(CAST(DMD_RTN_AMT AS DOUBLE))) != 0 THEN ROUND(SUM(CAST(DMD_RTN_AMT AS DOUBLE)) / (SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) + SUM(CAST(DMD_RTN_AMT AS DOUBLE))) * 100, 1) END FROM fact WHERE FISCAL_WEEK_ID = (SELECT MAX(FISCAL_WEEK_ID) FROM fact) GROUP BY GENDER_TEXT UNION ALL SELECT 'PRODUCT CLASS', PRODUCT_CLASS_TEXT, SUM(CAST(DMD_RTN_AMT AS DOUBLE)), SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) + SUM(CAST(DMD_RTN_AMT AS DOUBLE)), CASE WHEN (SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) + SUM(CAST(DMD_RTN_AMT AS DOUBLE))) != 0 THEN ROUND(SUM(CAST(DMD_RTN_AMT AS DOUBLE)) / (SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) + SUM(CAST(DMD_RTN_AMT AS DOUBLE))) * 100, 1) END FROM fact WHERE FISCAL_WEEK_ID = (SELECT MAX(FISCAL_WEEK_ID) FROM fact) GROUP BY PRODUCT_CLASS_TEXT ORDER BY dimension_type, returns_amt DESC"
+    },
+
+    "fcstGapByGender": {
+      "outputFile": "fcst-gap-by-gender.json",
+      "description": "Forecast gap contribution by gender",
+      "expectedRows": "3",
+      "sql": "SELECT GENDER_TEXT AS gender, SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) AS actual, SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE)) AS fcst, SUM(CAST(OP_SLS_AMT_WTD AS DOUBLE)) AS op, SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) - SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE)) AS fcst_gap, SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) - SUM(CAST(OP_SLS_AMT_WTD AS DOUBLE)) AS op_gap, CASE WHEN SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE)) != 0 THEN ROUND((SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) - SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE))) / SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE)) * 100, 1) END AS fcst_var_pct FROM fact WHERE FISCAL_WEEK_ID = (SELECT MAX(FISCAL_WEEK_ID) FROM fact) GROUP BY GENDER_TEXT ORDER BY fcst_gap DESC"
+    },
+
+    "fcstGapByEndUse": {
+      "outputFile": "fcst-gap-by-end-use.json",
+      "description": "Forecast gap contribution by end use - identifies beats and misses",
+      "expectedRows": "~6",
+      "sql": "SELECT END_USE_TEXT AS end_use, SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) AS actual, SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE)) AS fcst, SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) - SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE)) AS fcst_gap, CASE WHEN SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE)) != 0 THEN ROUND((SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) - SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE))) / SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE)) * 100, 1) END AS fcst_var_pct FROM fact WHERE FISCAL_WEEK_ID = (SELECT MAX(FISCAL_WEEK_ID) FROM fact) GROUP BY END_USE_TEXT HAVING SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) > 0 ORDER BY fcst_gap DESC"
+    },
+
+    "fcstGapByProductClass": {
+      "outputFile": "fcst-gap-by-product-class.json",
+      "description": "Forecast gap contribution by product class - waterfall of beats/misses",
+      "expectedRows": "~13",
+      "sql": "SELECT PRODUCT_CLASS_TEXT AS product_class, SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) AS actual, SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE)) AS fcst, SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) - SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE)) AS fcst_gap, CASE WHEN SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE)) != 0 THEN ROUND((SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) - SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE))) / SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE)) * 100, 1) END AS fcst_var_pct FROM fact WHERE FISCAL_WEEK_ID = (SELECT MAX(FISCAL_WEEK_ID) FROM fact) GROUP BY PRODUCT_CLASS_TEXT HAVING SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) > 0 ORDER BY fcst_gap DESC"
+    },
+
+    "fcstGapByChannel": {
+      "outputFile": "fcst-gap-by-channel.json",
+      "description": "Forecast gap by channel - EC beating, FP missing",
+      "expectedRows": "2",
+      "sql": "SELECT DISTRIBUTION_CHANNEL_TEXT AS channel, SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) AS actual, SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE)) AS fcst, SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) - SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE)) AS fcst_gap, CASE WHEN SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE)) != 0 THEN ROUND((SUM(CAST(NET_MERCH_DMD_AMT_WTD AS DOUBLE)) - SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE))) / SUM(CAST(FCST_SLS_AMT_WTD AS DOUBLE)) * 100, 1) END AS fcst_var_pct FROM fact WHERE FISCAL_WEEK_ID = (SELECT MAX(FISCAL_WEEK_ID) FROM fact) GROUP BY DISTRIBUTION_CHANNEL_TEXT ORDER BY fcst_gap DESC"
+    }
+  },
+
+  "pages": [
+    {
+      "id": "executive-summary",
+      "title": "Executive Summary",
+      "sections": [
+        {
+          "id": "kpi-row",
+          "columns": 12,
+          "components": [
+            {
+              "id": "kpi-total-demand",
+              "type": "kpi-card",
+              "dataSource": "execKpis",
+              "span": 2,
+              "config": {
+                "metric": { "key": "total_demand", "label": "Net Demand WTD", "format": "currency" },
+                "trend": { "valueKey": "yoy_pct", "label": "vs LY", "format": "percent" }
+              }
+            },
+            {
+              "id": "kpi-fcst-var",
+              "type": "kpi-card",
+              "dataSource": "execKpis",
+              "span": 2,
+              "config": {
+                "metric": { "key": "fcst_var_pct", "label": "vs Forecast", "format": "percent", "conditionalColor": { "positive": "#5BA67D", "negative": "#C75B5B" } },
+                "trend": { "valueKey": "fcst_var_amt", "label": "gap $", "format": "currency" }
+              }
+            },
+            {
+              "id": "kpi-op-var",
+              "type": "kpi-card",
+              "dataSource": "execKpis",
+              "span": 2,
+              "config": {
+                "metric": { "key": "op_var_pct", "label": "vs OP", "format": "percent", "conditionalColor": { "positive": "#5BA67D", "negative": "#C75B5B" } },
+                "trend": { "valueKey": "op_var_amt", "label": "gap $", "format": "currency" }
+              }
+            },
+            {
+              "id": "kpi-yoy",
+              "type": "kpi-card",
+              "dataSource": "execKpis",
+              "span": 2,
+              "config": {
+                "metric": { "key": "yoy_pct", "label": "YoY Growth", "format": "percent", "conditionalColor": { "positive": "#5BA67D", "negative": "#C75B5B" } }
+              }
+            },
+            {
+              "id": "kpi-fp-pct",
+              "type": "kpi-card",
+              "dataSource": "execKpis",
+              "span": 2,
+              "config": {
+                "metric": { "key": "full_price_pct", "label": "Full Price %", "format": "percent" }
+              }
+            },
+            {
+              "id": "kpi-rtn-rate",
+              "type": "kpi-card",
+              "dataSource": "execKpis",
+              "span": 2,
+              "config": {
+                "metric": { "key": "return_rate_pct", "label": "Return Rate", "format": "percent" }
+              }
+            }
+          ]
+        },
+        {
+          "id": "weekly-trend-section",
+          "title": "Weekly Demand Trend: Actuals vs Forecast vs OP vs LY",
+          "columns": 12,
+          "components": [
+            {
+              "id": "weekly-trend-chart",
+              "type": "combo-chart",
+              "dataSource": "weeklyTrend",
+              "span": 12,
+              "config": {
+                "xAxis": { "key": "week_end", "label": "Week Ending" },
+                "bars": [
+                  { "key": "actual", "label": "Actual", "format": "currency", "color": "#2C5F8A" },
+                  { "key": "actual_ly", "label": "LY", "format": "currency", "color": "#D4A843" }
+                ],
+                "lines": [
+                  { "key": "fcst", "label": "Forecast", "format": "currency", "color": "#C75B5B" },
+                  { "key": "op", "label": "OP", "format": "currency", "color": "#636E72" },
+                  { "key": "yoy_pct", "label": "YoY %", "format": "percent", "color": "#5BA67D" }
+                ],
+                "yAxisLeft": { "label": "Revenue", "format": "compact" },
+                "yAxisRight": { "label": "YoY %", "format": "percent" },
+                "showDataLabels": true,
+                "showLegend": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "channel-performance",
+      "title": "Channel Performance",
+      "sections": [
+        {
+          "id": "channel-kpis",
+          "title": "EC vs Full-Price — Latest Week",
+          "columns": 12,
+          "components": [
+            {
+              "id": "channel-bar",
+              "type": "bar-chart",
+              "dataSource": "channelPerformance",
+              "span": 6,
+              "config": {
+                "xAxis": { "key": "channel", "label": "Channel" },
+                "metrics": [
+                  { "key": "actual", "label": "Actual", "format": "currency", "color": "#2C5F8A" },
+                  { "key": "fcst", "label": "Forecast", "format": "currency", "color": "#C75B5B" },
+                  { "key": "op", "label": "OP", "format": "currency", "color": "#636E72" },
+                  { "key": "actual_ly", "label": "LY", "format": "currency", "color": "#D4A843" }
+                ],
+                "orientation": "vertical",
+                "showDataLabels": true
+              }
+            },
+            {
+              "id": "channel-table",
+              "type": "data-table",
+              "title": "Channel Detail",
+              "dataSource": "channelPerformance",
+              "span": 6,
+              "config": {
+                "columns": [
+                  { "key": "channel", "label": "Channel", "align": "left" },
+                  { "key": "actual", "label": "Actual", "format": "currency", "align": "right" },
+                  { "key": "fcst_var_pct", "label": "vs FCST %", "format": "percent", "align": "right", "conditionalColor": { "positive": "#5BA67D", "negative": "#C75B5B" } },
+                  { "key": "op_var_pct", "label": "vs OP %", "format": "percent", "align": "right", "conditionalColor": { "positive": "#5BA67D", "negative": "#C75B5B" } },
+                  { "key": "yoy_pct", "label": "YoY %", "format": "percent", "align": "right", "conditionalColor": { "positive": "#5BA67D", "negative": "#C75B5B" } },
+                  { "key": "full_price_pct", "label": "FP %", "format": "percent", "align": "right" },
+                  { "key": "return_rate_pct", "label": "Return Rate", "format": "percent", "align": "right" }
+                ],
+                "searchable": false,
+                "exportable": true
+              }
+            }
+          ]
+        },
+        {
+          "id": "channel-trend",
+          "title": "Weekly Channel Trend",
+          "columns": 12,
+          "components": [
+            {
+              "id": "channel-trend-table",
+              "type": "data-table",
+              "dataSource": "channelWeeklyTrend",
+              "span": 12,
+              "config": {
+                "columns": [
+                  { "key": "week_end", "label": "Week", "align": "left" },
+                  { "key": "channel", "label": "Channel", "align": "left" },
+                  { "key": "actual", "label": "Actual", "format": "currency", "align": "right" },
+                  { "key": "fcst", "label": "Forecast", "format": "currency", "align": "right" },
+                  { "key": "op", "label": "OP", "format": "currency", "align": "right" },
+                  { "key": "actual_ly", "label": "LY", "format": "currency", "align": "right" }
+                ],
+                "searchable": false,
+                "exportable": true,
+                "defaultSort": { "key": "week_end", "direction": "desc" }
+              }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "product-mix",
+      "title": "Product Mix",
+      "sections": [
+        {
+          "id": "gender-section",
+          "title": "By Gender",
+          "columns": 12,
+          "components": [
+            {
+              "id": "gender-donut",
+              "type": "donut-chart",
+              "title": "Gender Mix",
+              "dataSource": "genderPerformance",
+              "span": 3,
+              "config": { "categoryKey": "gender", "valueKey": "actual", "showPercent": true, "innerRadius": 60 }
+            },
+            {
+              "id": "gender-table",
+              "type": "data-table",
+              "title": "Gender Performance",
+              "dataSource": "genderPerformance",
+              "span": 9,
+              "config": {
+                "columns": [
+                  { "key": "gender", "label": "Gender", "align": "left" },
+                  { "key": "actual", "label": "Actual", "format": "currency", "align": "right" },
+                  { "key": "fcst_var_pct", "label": "vs FCST %", "format": "percent", "align": "right", "conditionalColor": { "positive": "#5BA67D", "negative": "#C75B5B" } },
+                  { "key": "op_var_pct", "label": "vs OP %", "format": "percent", "align": "right", "conditionalColor": { "positive": "#5BA67D", "negative": "#C75B5B" } },
+                  { "key": "yoy_pct", "label": "YoY %", "format": "percent", "align": "right", "conditionalColor": { "positive": "#5BA67D", "negative": "#C75B5B" } },
+                  { "key": "fcst_gap_amt", "label": "FCST Gap $", "format": "currency", "align": "right", "conditionalColor": { "positive": "#5BA67D", "negative": "#C75B5B" } },
+                  { "key": "units", "label": "Units", "format": "compact", "align": "right" }
+                ],
+                "searchable": false,
+                "exportable": true
+              }
+            }
+          ]
+        },
+        {
+          "id": "end-use-section",
+          "title": "By End Use",
+          "columns": 12,
+          "components": [
+            {
+              "id": "end-use-donut",
+              "type": "donut-chart",
+              "title": "End Use Mix",
+              "dataSource": "endUsePerformance",
+              "span": 3,
+              "config": { "categoryKey": "end_use", "valueKey": "actual", "showPercent": true, "innerRadius": 60 }
+            },
+            {
+              "id": "end-use-table",
+              "type": "data-table",
+              "title": "End Use Performance",
+              "dataSource": "endUsePerformance",
+              "span": 9,
+              "config": {
+                "columns": [
+                  { "key": "end_use", "label": "End Use", "align": "left" },
+                  { "key": "actual", "label": "Actual", "format": "currency", "align": "right" },
+                  { "key": "fcst_var_pct", "label": "vs FCST %", "format": "percent", "align": "right", "conditionalColor": { "positive": "#5BA67D", "negative": "#C75B5B" } },
+                  { "key": "op_var_pct", "label": "vs OP %", "format": "percent", "align": "right", "conditionalColor": { "positive": "#5BA67D", "negative": "#C75B5B" } },
+                  { "key": "yoy_pct", "label": "YoY %", "format": "percent", "align": "right", "conditionalColor": { "positive": "#5BA67D", "negative": "#C75B5B" } },
+                  { "key": "fcst_gap_amt", "label": "FCST Gap $", "format": "currency", "align": "right", "conditionalColor": { "positive": "#5BA67D", "negative": "#C75B5B" } }
+                ],
+                "searchable": false,
+                "exportable": true,
+                "defaultSort": { "key": "actual", "direction": "desc" }
+              }
+            }
+          ]
+        },
+        {
+          "id": "product-class-section",
+          "title": "By Product Class",
+          "columns": 12,
+          "components": [
+            {
+              "id": "product-class-table",
+              "type": "data-table",
+              "dataSource": "productClassPerformance",
+              "span": 12,
+              "config": {
+                "columns": [
+                  { "key": "product_class", "label": "Product Class", "align": "left" },
+                  { "key": "actual", "label": "Actual", "format": "currency", "align": "right" },
+                  { "key": "actual_ly", "label": "LY", "format": "currency", "align": "right" },
+                  { "key": "yoy_pct", "label": "YoY %", "format": "percent", "align": "right", "conditionalColor": { "positive": "#5BA67D", "negative": "#C75B5B" } },
+                  { "key": "fcst", "label": "Forecast", "format": "currency", "align": "right" },
+                  { "key": "fcst_var_pct", "label": "vs FCST %", "format": "percent", "align": "right", "conditionalColor": { "positive": "#5BA67D", "negative": "#C75B5B" } },
+                  { "key": "op", "label": "OP", "format": "currency", "align": "right" },
+                  { "key": "op_var_pct", "label": "vs OP %", "format": "percent", "align": "right", "conditionalColor": { "positive": "#5BA67D", "negative": "#C75B5B" } },
+                  { "key": "fcst_gap_amt", "label": "FCST Gap $", "format": "currency", "align": "right", "conditionalColor": { "positive": "#5BA67D", "negative": "#C75B5B" } }
+                ],
+                "searchable": true,
+                "exportable": true,
+                "defaultSort": { "key": "actual", "direction": "desc" }
+              }
+            }
+          ]
+        },
+        {
+          "id": "color-section",
+          "title": "Color vs Non-Color",
+          "columns": 12,
+          "components": [
+            {
+              "id": "color-donut",
+              "type": "donut-chart",
+              "title": "Color vs Non-Color Mix",
+              "dataSource": "colorVsNonColor",
+              "span": 3,
+              "config": { "categoryKey": "color_group", "valueKey": "actual", "showPercent": true, "innerRadius": 60 }
+            },
+            {
+              "id": "nrf-color-table",
+              "type": "data-table",
+              "title": "NRF Color Detail",
+              "dataSource": "nrfColorDetail",
+              "span": 9,
+              "config": {
+                "columns": [
+                  { "key": "nrf_color", "label": "NRF Color", "align": "left" },
+                  { "key": "color_group", "label": "Group", "align": "left" },
+                  { "key": "actual", "label": "Actual", "format": "currency", "align": "right" },
+                  { "key": "actual_ly", "label": "LY", "format": "currency", "align": "right" },
+                  { "key": "yoy_pct", "label": "YoY %", "format": "percent", "align": "right", "conditionalColor": { "positive": "#5BA67D", "negative": "#C75B5B" } }
+                ],
+                "searchable": true,
+                "exportable": true,
+                "defaultSort": { "key": "actual", "direction": "desc" }
+              }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "full-price-markdown",
+      "title": "Full Price vs Markdown",
+      "sections": [
+        {
+          "id": "fp-md-trend",
+          "title": "Weekly Full Price vs Markdown Trend",
+          "columns": 12,
+          "components": [
+            {
+              "id": "fp-md-combo",
+              "type": "combo-chart",
+              "dataSource": "fullPriceVsMarkdown",
+              "span": 12,
+              "config": {
+                "xAxis": { "key": "week_end", "label": "Week Ending" },
+                "bars": [
+                  { "key": "full_price_amt", "label": "Full Price TY", "format": "currency", "color": "#2C5F8A" },
+                  { "key": "full_price_amt_ly", "label": "Full Price LY", "format": "currency", "color": "#6A9BC3" },
+                  { "key": "markdown_amt", "label": "Markdown TY", "format": "currency", "color": "#E8913A" },
+                  { "key": "markdown_amt_ly", "label": "Markdown LY", "format": "currency", "color": "#D4A843" }
+                ],
+                "lines": [
+                  { "key": "full_price_pct", "label": "FP % TY", "format": "percent", "color": "#C75B5B" },
+                  { "key": "full_price_pct_ly", "label": "FP % LY", "format": "percent", "color": "#636E72" },
+                  { "key": "fcst", "label": "Forecast", "format": "currency", "color": "#5BA67D" }
+                ],
+                "yAxisLeft": { "label": "Revenue", "format": "compact" },
+                "yAxisRight": { "label": "Full Price %", "format": "percent" },
+                "showDataLabels": true,
+                "showLegend": true
+              }
+            }
+          ]
+        },
+        {
+          "id": "fp-md-channel",
+          "title": "Full Price / Markdown Split by Channel",
+          "columns": 12,
+          "components": [
+            {
+              "id": "fp-md-channel-bar",
+              "type": "bar-chart",
+              "dataSource": "fpMdByChannel",
+              "span": 6,
+              "config": {
+                "xAxis": { "key": "channel", "label": "Channel" },
+                "metrics": [
+                  { "key": "actual", "label": "Demand", "format": "currency", "color": "#2C5F8A" },
+                  { "key": "actual_ly", "label": "LY", "format": "currency", "color": "#D4A843" }
+                ],
+                "stacked": true,
+                "orientation": "vertical",
+                "showDataLabels": true
+              }
+            },
+            {
+              "id": "fp-md-channel-table",
+              "type": "data-table",
+              "dataSource": "fpMdByChannel",
+              "span": 6,
+              "config": {
+                "columns": [
+                  { "key": "channel", "label": "Channel", "align": "left" },
+                  { "key": "markdown_type", "label": "Type", "align": "left" },
+                  { "key": "actual", "label": "Actual", "format": "currency", "align": "right" },
+                  { "key": "actual_ly", "label": "LY", "format": "currency", "align": "right" },
+                  { "key": "yoy_pct", "label": "YoY %", "format": "percent", "align": "right", "conditionalColor": { "positive": "#5BA67D", "negative": "#C75B5B" } }
+                ],
+                "searchable": false,
+                "exportable": true
+              }
+            }
+          ]
+        },
+        {
+          "id": "fp-md-gender",
+          "title": "Full Price / Markdown by Gender",
+          "columns": 12,
+          "components": [
+            {
+              "id": "fp-md-gender-table",
+              "type": "data-table",
+              "dataSource": "fpMdByGender",
+              "span": 12,
+              "config": {
+                "columns": [
+                  { "key": "gender", "label": "Gender", "align": "left" },
+                  { "key": "full_price_amt", "label": "Full Price $", "format": "currency", "align": "right" },
+                  { "key": "markdown_amt", "label": "Markdown $", "format": "currency", "align": "right" },
+                  { "key": "full_price_pct", "label": "FP %", "format": "percent", "align": "right" },
+                  { "key": "fp_yoy_pct", "label": "FP YoY %", "format": "percent", "align": "right", "conditionalColor": { "positive": "#5BA67D", "negative": "#C75B5B" } },
+                  { "key": "md_yoy_pct", "label": "MD YoY %", "format": "percent", "align": "right", "conditionalColor": { "positive": "#5BA67D", "negative": "#C75B5B" } },
+                  { "key": "fcst", "label": "Forecast", "format": "currency", "align": "right" },
+                  { "key": "op", "label": "OP", "format": "currency", "align": "right" }
+                ],
+                "searchable": false,
+                "exportable": true,
+                "defaultSort": { "key": "full_price_amt", "direction": "desc" }
+              }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "returns",
+      "title": "Returns",
+      "sections": [
+        {
+          "id": "returns-trend",
+          "title": "Weekly Returns Trend",
+          "columns": 12,
+          "components": [
+            {
+              "id": "returns-combo",
+              "type": "combo-chart",
+              "dataSource": "returnsWeekly",
+              "span": 12,
+              "config": {
+                "xAxis": { "key": "week_end", "label": "Week Ending" },
+                "bars": [
+                  { "key": "returns_amt", "label": "Returns $", "format": "currency", "color": "#C75B5B" },
+                  { "key": "net_demand", "label": "Net Demand", "format": "currency", "color": "#2C5F8A" }
+                ],
+                "lines": [
+                  { "key": "return_rate_pct", "label": "Return Rate %", "format": "percent", "color": "#E8913A" }
+                ],
+                "yAxisLeft": { "label": "Revenue", "format": "compact" },
+                "yAxisRight": { "label": "Return Rate %", "format": "percent" },
+                "showDataLabels": true,
+                "showLegend": true
+              }
+            }
+          ]
+        },
+        {
+          "id": "returns-breakdown",
+          "title": "Returns by Dimension (Latest Week) -- Note: DMD_RTN_AMT only (no LY comparison or cadence breakdown available)",
+          "columns": 12,
+          "components": [
+            {
+              "id": "returns-dim-table",
+              "type": "data-table",
+              "dataSource": "returnsByDimension",
+              "span": 12,
+              "config": {
+                "columns": [
+                  { "key": "dimension_type", "label": "Dimension", "align": "left" },
+                  { "key": "dimension_value", "label": "Value", "align": "left" },
+                  { "key": "returns_amt", "label": "Returns $", "format": "currency", "align": "right" },
+                  { "key": "gross_demand", "label": "Gross Demand", "format": "currency", "align": "right" },
+                  { "key": "return_rate_pct", "label": "Return Rate %", "format": "percent", "align": "right" }
+                ],
+                "searchable": true,
+                "exportable": true,
+                "pageSize": 25,
+                "defaultSort": { "key": "returns_amt", "direction": "desc" }
+              }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "forecast-gap",
+      "title": "Forecast Gap Analysis",
+      "sections": [
+        {
+          "id": "gap-by-channel",
+          "title": "Forecast Gap by Channel",
+          "columns": 12,
+          "components": [
+            {
+              "id": "gap-channel-bar",
+              "type": "bar-chart",
+              "dataSource": "fcstGapByChannel",
+              "span": 6,
+              "config": {
+                "xAxis": { "key": "channel", "label": "Channel" },
+                "metrics": [
+                  { "key": "fcst_gap", "label": "FCST Gap $", "format": "currency", "color": "#2C5F8A", "conditionalColor": { "positive": "#5BA67D", "negative": "#C75B5B" } }
+                ],
+                "orientation": "vertical",
+                "showDataLabels": true
+              }
+            },
+            {
+              "id": "gap-channel-table",
+              "type": "data-table",
+              "dataSource": "fcstGapByChannel",
+              "span": 6,
+              "config": {
+                "columns": [
+                  { "key": "channel", "label": "Channel", "align": "left" },
+                  { "key": "actual", "label": "Actual", "format": "currency", "align": "right" },
+                  { "key": "fcst", "label": "Forecast", "format": "currency", "align": "right" },
+                  { "key": "fcst_gap", "label": "Gap $", "format": "currency", "align": "right", "conditionalColor": { "positive": "#5BA67D", "negative": "#C75B5B" } },
+                  { "key": "fcst_var_pct", "label": "Gap %", "format": "percent", "align": "right", "conditionalColor": { "positive": "#5BA67D", "negative": "#C75B5B" } }
+                ],
+                "searchable": false,
+                "exportable": true
+              }
+            }
+          ]
+        },
+        {
+          "id": "gap-by-end-use",
+          "title": "Forecast Gap by End Use",
+          "columns": 12,
+          "components": [
+            {
+              "id": "gap-end-use-bar",
+              "type": "bar-chart",
+              "dataSource": "fcstGapByEndUse",
+              "span": 6,
+              "config": {
+                "xAxis": { "key": "end_use", "label": "End Use" },
+                "metrics": [
+                  { "key": "fcst_gap", "label": "FCST Gap $", "format": "currency", "color": "#2C5F8A" }
+                ],
+                "orientation": "horizontal",
+                "showDataLabels": true
+              }
+            },
+            {
+              "id": "gap-end-use-table",
+              "type": "data-table",
+              "dataSource": "fcstGapByEndUse",
+              "span": 6,
+              "config": {
+                "columns": [
+                  { "key": "end_use", "label": "End Use", "align": "left" },
+                  { "key": "actual", "label": "Actual", "format": "currency", "align": "right" },
+                  { "key": "fcst", "label": "Forecast", "format": "currency", "align": "right" },
+                  { "key": "fcst_gap", "label": "Gap $", "format": "currency", "align": "right", "conditionalColor": { "positive": "#5BA67D", "negative": "#C75B5B" } },
+                  { "key": "fcst_var_pct", "label": "Gap %", "format": "percent", "align": "right", "conditionalColor": { "positive": "#5BA67D", "negative": "#C75B5B" } }
+                ],
+                "searchable": false,
+                "exportable": true,
+                "defaultSort": { "key": "fcst_gap", "direction": "desc" }
+              }
+            }
+          ]
+        },
+        {
+          "id": "gap-by-product-class",
+          "title": "Forecast Gap by Product Class",
+          "columns": 12,
+          "components": [
+            {
+              "id": "gap-product-class-bar",
+              "type": "bar-chart",
+              "dataSource": "fcstGapByProductClass",
+              "span": 6,
+              "config": {
+                "xAxis": { "key": "product_class", "label": "Product Class" },
+                "metrics": [
+                  { "key": "fcst_gap", "label": "FCST Gap $", "format": "currency", "color": "#2C5F8A" }
+                ],
+                "orientation": "horizontal",
+                "showDataLabels": true
+              }
+            },
+            {
+              "id": "gap-product-class-table",
+              "type": "data-table",
+              "dataSource": "fcstGapByProductClass",
+              "span": 6,
+              "config": {
+                "columns": [
+                  { "key": "product_class", "label": "Product Class", "align": "left" },
+                  { "key": "actual", "label": "Actual", "format": "currency", "align": "right" },
+                  { "key": "fcst", "label": "Forecast", "format": "currency", "align": "right" },
+                  { "key": "fcst_gap", "label": "Gap $", "format": "currency", "align": "right", "conditionalColor": { "positive": "#5BA67D", "negative": "#C75B5B" } },
+                  { "key": "fcst_var_pct", "label": "Gap %", "format": "percent", "align": "right", "conditionalColor": { "positive": "#5BA67D", "negative": "#C75B5B" } }
+                ],
+                "searchable": false,
+                "exportable": true,
+                "defaultSort": { "key": "fcst_gap", "direction": "desc" }
+              }
+            }
+          ]
+        },
+        {
+          "id": "gap-by-gender",
+          "title": "Forecast Gap by Gender",
+          "columns": 12,
+          "components": [
+            {
+              "id": "gap-gender-table",
+              "type": "data-table",
+              "dataSource": "fcstGapByGender",
+              "span": 12,
+              "config": {
+                "columns": [
+                  { "key": "gender", "label": "Gender", "align": "left" },
+                  { "key": "actual", "label": "Actual", "format": "currency", "align": "right" },
+                  { "key": "fcst", "label": "Forecast", "format": "currency", "align": "right" },
+                  { "key": "fcst_gap", "label": "FCST Gap $", "format": "currency", "align": "right", "conditionalColor": { "positive": "#5BA67D", "negative": "#C75B5B" } },
+                  { "key": "fcst_var_pct", "label": "FCST Var %", "format": "percent", "align": "right", "conditionalColor": { "positive": "#5BA67D", "negative": "#C75B5B" } },
+                  { "key": "op", "label": "OP", "format": "currency", "align": "right" },
+                  { "key": "op_gap", "label": "OP Gap $", "format": "currency", "align": "right", "conditionalColor": { "positive": "#5BA67D", "negative": "#C75B5B" } }
+                ],
+                "searchable": false,
+                "exportable": true,
+                "defaultSort": { "key": "fcst_gap", "direction": "desc" }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

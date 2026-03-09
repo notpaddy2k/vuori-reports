@@ -1,0 +1,36 @@
+[
+  {
+    "channel": "ECOMMERCE",
+    "actual": 11211527.999999981,
+    "actual_ly": 9658224.140000004,
+    "fcst": 9415944.009280022,
+    "op": 9415944.009280022,
+    "full_price_amt": 9535171.349999987,
+    "markdown_amt": 1676356.6500000001,
+    "returns_amt": 2837248.7399999877,
+    "units": 147992.0,
+    "units_ly": 134500.0,
+    "yoy_pct": 16.1,
+    "fcst_var_pct": 19.1,
+    "op_var_pct": 19.1,
+    "full_price_pct": 85.0,
+    "return_rate_pct": 20.2
+  },
+  {
+    "channel": "FULL-PRICE",
+    "actual": 7807361.150000002,
+    "actual_ly": 6135002.770000006,
+    "fcst": 8363000.549229994,
+    "op": 8363000.549229994,
+    "full_price_amt": 7490904.529999994,
+    "markdown_amt": 316456.61999999976,
+    "returns_amt": 1330070.1499999983,
+    "units": 98204.0,
+    "units_ly": 78831.0,
+    "yoy_pct": 27.3,
+    "fcst_var_pct": -6.6,
+    "op_var_pct": -6.6,
+    "full_price_pct": 95.9,
+    "return_rate_pct": 14.6
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "FISCAL_WEEK_ID": 202605.0,
+    "week_end": "2026-02-08",
+    "returns_amt": 4513473.049999999,
+    "net_demand": 15654280.13999999,
+    "gross_demand": 20167753.18999999,
+    "return_rate_pct": 22.4
+  },
+  {
+    "FISCAL_WEEK_ID": 202606.0,
+    "week_end": "2026-02-15",
+    "returns_amt": 4496991.310000012,
+    "net_demand": 16527798.380000044,
+    "gross_demand": 21024789.690000057,
+    "return_rate_pct": 21.4
+  },
+  {
+    "FISCAL_WEEK_ID": 202607.0,
+    "week_end": "2026-02-22",
+    "returns_amt": 4283955.309999988,
+    "net_demand": 14005490.600000067,
+    "gross_demand": 18289445.910000056,
+    "return_rate_pct": 23.4
+  },
+  {
+    "FISCAL_WEEK_ID": 202608.0,
+    "week_end": "2026-03-01",
+    "returns_amt": 3948897.869999986,
+    "net_demand": 19508814.810000032,
+    "gross_demand": 23457712.68000002,
+    "return_rate_pct": 16.8
+  },
+  {
+    "FISCAL_WEEK_ID": 202609.0,
+    "week_end": "2026-03-08",
+    "returns_amt": 4167318.889999969,
+    "net_demand": 19018889.149999984,
+    "gross_demand": 23186208.039999954,
+    "return_rate_pct": 18.0
+  }
+]

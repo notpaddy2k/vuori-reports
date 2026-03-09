@@ -1,0 +1,107 @@
+[
+  {
+    "nrf_color": "BLUE",
+    "color_group": "COLOR",
+    "actual": 5901203.820067107,
+    "actual_ly": 4086489.4899999993,
+    "yoy_pct": 44.4
+  },
+  {
+    "nrf_color": "BLACK",
+    "color_group": "NON-COLOR (CORE)",
+    "actual": 4287215.850322511,
+    "actual_ly": 3611262.990000001,
+    "yoy_pct": 18.7
+  },
+  {
+    "nrf_color": "WHITE",
+    "color_group": "NON-COLOR (CORE)",
+    "actual": 1689487.5971212126,
+    "actual_ly": 902374.2400000005,
+    "yoy_pct": 87.2
+  },
+  {
+    "nrf_color": "GREY",
+    "color_group": "NON-COLOR (CORE)",
+    "actual": 1673551.0533636361,
+    "actual_ly": 1858377.4000000015,
+    "yoy_pct": -9.9
+  },
+  {
+    "nrf_color": "BROWN",
+    "color_group": "NON-COLOR (CORE)",
+    "actual": 1440727.122833333,
+    "actual_ly": 1333387.1099999992,
+    "yoy_pct": 8.1
+  },
+  {
+    "nrf_color": "NO COLOR",
+    "color_group": "NON-COLOR (CORE)",
+    "actual": 942935.1241969701,
+    "actual_ly": 1139735.5300000003,
+    "yoy_pct": -17.3
+  },
+  {
+    "nrf_color": "GREEN",
+    "color_group": "COLOR",
+    "actual": 936306.9698095233,
+    "actual_ly": 1707455.7299999995,
+    "yoy_pct": -45.2
+  },
+  {
+    "nrf_color": "RED",
+    "color_group": "COLOR",
+    "actual": 880101.650833333,
+    "actual_ly": 119401.12999999999,
+    "yoy_pct": 637.1
+  },
+  {
+    "nrf_color": "BEIGE",
+    "color_group": "NON-COLOR (CORE)",
+    "actual": 778826.7760000005,
+    "actual_ly": 240498.73000000007,
+    "yoy_pct": 223.8
+  },
+  {
+    "nrf_color": "PURPLE",
+    "color_group": "COLOR",
+    "actual": 218471.15928571436,
+    "actual_ly": 471875.73000000004,
+    "yoy_pct": -53.7
+  },
+  {
+    "nrf_color": "PINK",
+    "color_group": "COLOR",
+    "actual": 209578.5541666666,
+    "actual_ly": 142479.88000000003,
+    "yoy_pct": 47.1
+  },
+  {
+    "nrf_color": "YELLOW",
+    "color_group": "COLOR",
+    "actual": 40725.78,
+    "actual_ly": 141743.48000000004,
+    "yoy_pct": -71.3
+  },
+  {
+    "nrf_color": "ASSORTED",
+    "color_group": "COLOR",
+    "actual": 7209.4400000000005,
+    "actual_ly": 33707.97,
+    "yoy_pct": -78.6
+  },
+  {
+    "nrf_color": "MISC",
+    "color_group": "COLOR",
+    "actual": 6985.799999999999,
+    "actual_ly": 529.4,
+    "yoy_pct": 1219.6
+  },
+  {
+    "nrf_color": "ORANGE",
+    "color_group": "COLOR",
+    "actual": 5562.451999999999,
+    "actual_ly": 3908.1000000000004,
+    "yoy_pct": 42.3
+  }
+]

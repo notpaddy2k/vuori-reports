@@ -1,0 +1,128 @@
+[
+  {
+    "dimension_type": "CHANNEL",
+    "dimension_value": "ECOMMERCE",
+    "returns_amt": 2837248.7399999877,
+    "gross_demand": 14048776.739999969,
+    "return_rate_pct": 20.2
+  },
+  {
+    "dimension_type": "CHANNEL",
+    "dimension_value": "FULL-PRICE",
+    "returns_amt": 1330070.1499999983,
+    "gross_demand": 9137431.3,
+    "return_rate_pct": 14.6
+  },
+  {
+    "dimension_type": "GENDER",
+    "dimension_value": "WOMENS",
+    "returns_amt": 2672006.027162328,
+    "gross_demand": 13860522.989999983,
+    "return_rate_pct": 19.3
+  },
+  {
+    "dimension_type": "GENDER",
+    "dimension_value": "MENS",
+    "returns_amt": 1472278.3126709945,
+    "gross_demand": 9063051.370000008,
+    "return_rate_pct": 16.2
+  },
+  {
+    "dimension_type": "GENDER",
+    "dimension_value": "UNISEX",
+    "returns_amt": 23034.550166666664,
+    "gross_demand": 262633.68,
+    "return_rate_pct": 8.8
+  },
+  {
+    "dimension_type": "PRODUCT CLASS",
+    "dimension_value": "BOTTOMS",
+    "returns_amt": 2148528.154564927,
+    "gross_demand": 11544627.289999992,
+    "return_rate_pct": 18.6
+  },
+  {
+    "dimension_type": "PRODUCT CLASS",
+    "dimension_value": "TOPS",
+    "returns_amt": 759470.1875909102,
+    "gross_demand": 5315034.869999999,
+    "return_rate_pct": 14.3
+  },
+  {
+    "dimension_type": "PRODUCT CLASS",
+    "dimension_value": "LAYERS",
+    "returns_amt": 648096.317510823,
+    "gross_demand": 3099051.040000002,
+    "return_rate_pct": 20.9
+  },
+  {
+    "dimension_type": "PRODUCT CLASS",
+    "dimension_value": "OUTERWEAR",
+    "returns_amt": 400890.029666667,
+    "gross_demand": 1558510.4899999998,
+    "return_rate_pct": 25.7
+  },
+  {
+    "dimension_type": "PRODUCT CLASS",
+    "dimension_value": "BRAS",
+    "returns_amt": 102081.83633333335,
+    "gross_demand": 618316.0200000003,
+    "return_rate_pct": 16.5
+  },
+  {
+    "dimension_type": "PRODUCT CLASS",
+    "dimension_value": "WATER",
+    "returns_amt": 47755.78749999999,
+    "gross_demand": 536398.65,
+    "return_rate_pct": 8.9
+  },
+  {
+    "dimension_type": "PRODUCT CLASS",
+    "dimension_value": "DRESSES",
+    "returns_amt": 34473.52666666667,
+    "gross_demand": 209334.13999999998,
+    "return_rate_pct": 16.5
+  },
+  {
+    "dimension_type": "PRODUCT CLASS",
+    "dimension_value": "BAGS",
+    "returns_amt": 8860.282999999998,
+    "gross_demand": 85275.3,
+    "return_rate_pct": 10.4
+  },
+  {
+    "dimension_type": "PRODUCT CLASS",
+    "dimension_value": "HEADWEAR",
+    "returns_amt": 8206.109166666669,
+    "gross_demand": 84970.04000000001,
+    "return_rate_pct": 9.7
+  },
+  {
+    "dimension_type": "PRODUCT CLASS",
+    "dimension_value": "SOCKS",
+    "returns_amt": 4195.428,
+    "gross_demand": 77910.09,
+    "return_rate_pct": 5.4
+  },
+  {
+    "dimension_type": "PRODUCT CLASS",
+    "dimension_value": "UNDERWEAR",
+    "returns_amt": 2988.5,
+    "gross_demand": 42301.86,
+    "return_rate_pct": 7.1
+  },
+  {
+    "dimension_type": "PRODUCT CLASS",
+    "dimension_value": "FOOTWEAR",
+    "returns_amt": 968.0,
+    "gross_demand": 5958.0,
+    "return_rate_pct": 16.2
+  },
+  {
+    "dimension_type": "PRODUCT CLASS",
+    "dimension_value": "MISC AXS",
+    "returns_amt": 804.7300000000001,
+    "gross_demand": 8520.25,
+    "return_rate_pct": 9.4
+  }
+]

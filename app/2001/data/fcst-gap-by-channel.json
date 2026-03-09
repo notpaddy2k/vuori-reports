@@ -1,0 +1,16 @@
+[
+  {
+    "channel": "ECOMMERCE",
+    "actual": 11211527.999999981,
+    "fcst": 9415944.009280022,
+    "fcst_gap": 1795583.9907199591,
+    "fcst_var_pct": 19.1
+  },
+  {
+    "channel": "FULL-PRICE",
+    "actual": 7807361.150000002,
+    "fcst": 8363000.549229994,
+    "fcst_gap": -555639.3992299922,
+    "fcst_var_pct": -6.6
+  }
+]

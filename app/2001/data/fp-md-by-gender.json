@@ -1,0 +1,41 @@
+[
+  {
+    "gender": "WOMENS",
+    "full_price_amt": 10096432.779999986,
+    "markdown_amt": 1092084.1828376611,
+    "full_price_amt_ly": 9508501.959999995,
+    "markdown_amt_ly": 102596.78999999998,
+    "fcst": 10552482.020350005,
+    "op": 10552482.020350005,
+    "total_actual": 11188516.962837655,
+    "full_price_pct": 90.2,
+    "fp_yoy_pct": 6.2,
+    "md_yoy_pct": 964.4
+  },
+  {
+    "gender": "MENS",
+    "full_price_amt": 6708712.940000002,
+    "markdown_amt": 882060.1173290035,
+    "full_price_amt_ly": 5923825.720000003,
+    "markdown_amt_ly": 109427.76000000004,
+    "fcst": 7017628.532640005,
+    "op": 7017628.532640005,
+    "total_actual": 7590773.057329014,
+    "full_price_pct": 88.4,
+    "fp_yoy_pct": 13.2,
+    "md_yoy_pct": 706.1
+  },
+  {
+    "gender": "UNISEX",
+    "full_price_amt": 220930.15999999997,
+    "markdown_amt": 18668.969833333333,
+    "full_price_amt_ly": 141921.77000000002,
+    "markdown_amt_ly": 6952.909999999997,
+    "fcst": 208834.00552,
+    "op": 208834.00552,
+    "total_actual": 239599.1298333333,
+    "full_price_pct": 92.2,
+    "fp_yoy_pct": 55.7,
+    "md_yoy_pct": 168.5
+  }
+]

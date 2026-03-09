@@ -1,0 +1,62 @@
+[
+  {
+    "FISCAL_WEEK_ID": 202605.0,
+    "week_end": "2026-02-08",
+    "full_price_amt": 14262741.209999992,
+    "markdown_amt": 1391538.9299999957,
+    "full_price_amt_ly": 9059171.949999988,
+    "markdown_amt_ly": 839690.3399999992,
+    "fcst": 14262741.209999986,
+    "op": 13862056.173789984,
+    "full_price_pct": 91.1,
+    "full_price_pct_ly": 91.5
+  },
+  {
+    "FISCAL_WEEK_ID": 202606.0,
+    "week_end": "2026-02-15",
+    "full_price_amt": 14495269.991666682,
+    "markdown_amt": 2032528.388333328,
+    "full_price_amt_ly": 10528366.479999993,
+    "markdown_amt_ly": 593180.3999999992,
+    "fcst": 14495269.991667047,
+    "op": 14263136.45417,
+    "full_price_pct": 87.7,
+    "full_price_pct_ly": 94.7
+  },
+  {
+    "FISCAL_WEEK_ID": 202607.0,
+    "week_end": "2026-02-22",
+    "full_price_amt": 12109374.380000038,
+    "markdown_amt": 1896116.2199999902,
+    "full_price_amt_ly": 12567917.869999971,
+    "markdown_amt_ly": 87145.57000000004,
+    "fcst": 12109374.380000029,
+    "op": 12765715.948829977,
+    "full_price_pct": 86.5,
+    "full_price_pct_ly": 99.3
+  },
+  {
+    "FISCAL_WEEK_ID": 202608.0,
+    "week_end": "2026-03-01",
+    "full_price_amt": 17602260.679999985,
+    "markdown_amt": 1906554.1299999957,
+    "full_price_amt_ly": 14841703.900000017,
+    "markdown_amt_ly": 49540.94999999997,
+    "fcst": 17602260.679999948,
+    "op": 18144007.069079965,
+    "full_price_pct": 90.2,
+    "full_price_pct_ly": 99.7
+  },
+  {
+    "FISCAL_WEEK_ID": 202609.0,
+    "week_end": "2026-03-08",
+    "full_price_amt": 17026075.879999965,
+    "markdown_amt": 1992813.27,
+    "full_price_amt_ly": 15574249.44999999,
+    "markdown_amt_ly": 218977.46000000025,
+    "fcst": 17778944.558510017,
+    "op": 17778944.558510017,
+    "full_price_pct": 89.5,
+    "full_price_pct_ly": 98.6
+  }
+]
