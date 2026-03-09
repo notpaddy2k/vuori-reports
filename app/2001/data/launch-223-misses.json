@@ -1,0 +1,112 @@
+[
+  {
+    "style": "TRESTLES TWILL TIE SHORT",
+    "product_class": "BOTTOMS",
+    "gender": "WOMENS",
+    "actual": 18490.0,
+    "fcst": 127226.89829,
+    "gap": -108736.89829,
+    "vs_fcst_pct": -85.5,
+    "eoh": 23879.0,
+    "return_rate": 9.5
+  },
+  {
+    "style": "PERFORMANCE JOGGER",
+    "product_class": "BOTTOMS",
+    "gender": "WOMENS",
+    "actual": 63847.35,
+    "fcst": 124546.83202,
+    "gap": -60699.48202,
+    "vs_fcst_pct": -48.7,
+    "eoh": 12162.0,
+    "return_rate": 5.3
+  },
+  {
+    "style": "TRESTLES TWILL WIDELEG",
+    "product_class": "BOTTOMS",
+    "gender": "WOMENS",
+    "actual": 121715.09,
+    "fcst": 178195.41928,
+    "gap": -56480.32928,
+    "vs_fcst_pct": -31.7,
+    "eoh": 10213.0,
+    "return_rate": 8.5
+  },
+  {
+    "style": "TECH WAFFLE CREW",
+    "product_class": "LAYERS",
+    "gender": "MENS",
+    "actual": 112670.6933333333,
+    "fcst": 142786.54209,
+    "gap": -30115.8487566667,
+    "vs_fcst_pct": -21.1,
+    "eoh": 17037.0,
+    "return_rate": 5.1
+  },
+  {
+    "style": "VILLA EVERYDAY WIDELEG",
+    "product_class": "BOTTOMS",
+    "gender": "WOMENS",
+    "actual": 19618.38,
+    "fcst": 46987.29758,
+    "gap": -27368.91758,
+    "vs_fcst_pct": -58.2,
+    "eoh": 4211.0,
+    "return_rate": 9.3
+  },
+  {
+    "style": "VUORI ALLTHEFEELS SHIRRED CROP",
+    "product_class": "BOTTOMS",
+    "gender": "WOMENS",
+    "actual": 15480.31,
+    "fcst": 42395.79438,
+    "gap": -26915.48438,
+    "vs_fcst_pct": -63.5,
+    "eoh": 3776.0,
+    "return_rate": 1.6
+  },
+  {
+    "style": "PONTO FULL ZIP HOODIE",
+    "product_class": "LAYERS",
+    "gender": "MENS",
+    "actual": 33372.4,
+    "fcst": 59903.77011,
+    "gap": -26531.37011,
+    "vs_fcst_pct": -44.3,
+    "eoh": 6671.0,
+    "return_rate": 5.3
+  },
+  {
+    "style": "DAILY PIPED BRA",
+    "product_class": "BRAS",
+    "gender": "WOMENS",
+    "actual": 85922.0,
+    "fcst": 112414.9932,
+    "gap": -26492.9932,
+    "vs_fcst_pct": -23.6,
+    "eoh": 14650.0,
+    "return_rate": 8.2
+  },
+  {
+    "style": "VUORI ALLTHEFEELS SLIM FLARE",
+    "product_class": "BOTTOMS",
+    "gender": "WOMENS",
+    "actual": 18177.55,
+    "fcst": 43014.17464,
+    "gap": -24836.62464,
+    "vs_fcst_pct": -57.7,
+    "eoh": 831.0,
+    "return_rate": 12.0
+  },
+  {
+    "style": "VILLA EVERYDAY SHORT",
+    "product_class": "BOTTOMS",
+    "gender": "WOMENS",
+    "actual": 25174.62,
+    "fcst": 48563.36218,
+    "gap": -23388.74218,
+    "vs_fcst_pct": -48.2,
+    "eoh": 8783.0,
+    "return_rate": 3.2
+  }
+]

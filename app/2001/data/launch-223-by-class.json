@@ -1,0 +1,82 @@
+[
+  {
+    "product_class": "WATER",
+    "actual": 404750.325,
+    "fcst": 191698.59855,
+    "eoh": 28311.0,
+    "gap": 213051.72645,
+    "vs_fcst_pct": 111.1
+  },
+  {
+    "product_class": "TOPS",
+    "actual": 1442256.1705303031,
+    "fcst": 1314079.30485,
+    "eoh": 245796.0,
+    "gap": 128176.8656803032,
+    "vs_fcst_pct": 9.8
+  },
+  {
+    "product_class": "BOTTOMS",
+    "actual": 2964393.3565,
+    "fcst": 2844576.95709,
+    "eoh": 339788.0,
+    "gap": 119816.3994100001,
+    "vs_fcst_pct": 4.2
+  },
+  {
+    "product_class": "OUTERWEAR",
+    "actual": 373256.722,
+    "fcst": 267691.05691,
+    "eoh": 24385.0,
+    "gap": 105565.66509,
+    "vs_fcst_pct": 39.4
+  },
+  {
+    "product_class": "LAYERS",
+    "actual": 716593.1746969697,
+    "fcst": 701441.35161,
+    "eoh": 54875.0,
+    "gap": 15151.8230869697,
+    "vs_fcst_pct": 2.2
+  },
+  {
+    "product_class": "BAGS",
+    "actual": 10347.092,
+    "fcst": 2786.25448,
+    "eoh": 2151.0,
+    "gap": 7560.83752,
+    "vs_fcst_pct": 271.4
+  },
+  {
+    "product_class": "HEADWEAR",
+    "actual": 20201.5033333333,
+    "fcst": 18788.84412,
+    "eoh": 7718.0,
+    "gap": 1412.6592133333,
+    "vs_fcst_pct": 7.5
+  },
+  {
+    "product_class": "SOCKS",
+    "actual": 4795.96,
+    "fcst": 6245.0902,
+    "eoh": 23273.0,
+    "gap": -1449.1302,
+    "vs_fcst_pct": -23.2
+  },
+  {
+    "product_class": "DRESSES",
+    "actual": 106237.16,
+    "fcst": 121524.27623,
+    "eoh": 12614.0,
+    "gap": -15287.11623,
+    "vs_fcst_pct": -12.6
+  },
+  {
+    "product_class": "BRAS",
+    "actual": 192840.95,
+    "fcst": 240075.67724,
+    "eoh": 26273.0,
+    "gap": -47234.72724,
+    "vs_fcst_pct": -19.7
+  }
+]

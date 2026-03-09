@@ -1,0 +1,152 @@
+[
+  {
+    "style": "W'S VUORI VINTAGE WIDELEG 32\"",
+    "product_class": "BOTTOMS",
+    "eoh_start": 1626.0,
+    "eoh_now": 8623.0,
+    "eoh_change_pct": 430.3,
+    "fcst_gap": -150986.47894,
+    "actual": 0.0,
+    "fcst": 150986.47894
+  },
+  {
+    "style": "TRESTLES TWILL TIE SHORT",
+    "product_class": "BOTTOMS",
+    "eoh_start": 0.0,
+    "eoh_now": 23879.0,
+    "eoh_change_pct": null,
+    "fcst_gap": -108736.89829,
+    "actual": 18490.0,
+    "fcst": 127226.89829
+  },
+  {
+    "style": "HALO ESSENTIAL WIDELEG",
+    "product_class": "BOTTOMS",
+    "eoh_start": 89370.0,
+    "eoh_now": 125925.0,
+    "eoh_change_pct": 40.9,
+    "fcst_gap": -106533.5975133333,
+    "actual": 323041.3816666667,
+    "fcst": 429574.97918
+  },
+  {
+    "style": "CORONADO PANT 30\"",
+    "product_class": "BOTTOMS",
+    "eoh_start": 14792.0,
+    "eoh_now": 18900.0,
+    "eoh_change_pct": 27.8,
+    "fcst_gap": -74576.0334571429,
+    "actual": 52210.6246428571,
+    "fcst": 126786.6581
+  },
+  {
+    "style": "VUORI ALLTHEFORM LEGGING",
+    "product_class": "BOTTOMS",
+    "eoh_start": 31592.0,
+    "eoh_now": 35572.0,
+    "eoh_change_pct": 12.6,
+    "fcst_gap": -51187.03478,
+    "actual": 133677.325,
+    "fcst": 184864.35978
+  },
+  {
+    "style": "W'S VUORI VINTAGE OS DENIM JKT",
+    "product_class": "OUTERWEAR",
+    "eoh_start": 0.0,
+    "eoh_now": 4976.0,
+    "eoh_change_pct": null,
+    "fcst_gap": -50026.90642,
+    "actual": 0.0,
+    "fcst": 50026.90642
+  },
+  {
+    "style": "PONTO FULL ZIP HOODIE",
+    "product_class": "LAYERS",
+    "eoh_start": 13264.0,
+    "eoh_now": 17689.0,
+    "eoh_change_pct": 33.4,
+    "fcst_gap": -48093.871,
+    "actual": 63301.8,
+    "fcst": 111395.671
+  },
+  {
+    "style": "PERFORMANCE JOGGER",
+    "product_class": "BOTTOMS",
+    "eoh_start": 118909.0,
+    "eoh_now": 123406.0,
+    "eoh_change_pct": 3.8,
+    "fcst_gap": -46674.63134,
+    "actual": 383774.02,
+    "fcst": 430448.65134
+  },
+  {
+    "style": "S/S PLAID BUTTON DOWN",
+    "product_class": "TOPS",
+    "eoh_start": 12223.0,
+    "eoh_now": 14752.0,
+    "eoh_change_pct": 20.7,
+    "fcst_gap": -45226.40277,
+    "actual": 29549.95,
+    "fcst": 74776.35277
+  },
+  {
+    "style": "HALO MODERN PULLOVER HOODIE",
+    "product_class": "LAYERS",
+    "eoh_start": 8743.0,
+    "eoh_now": 8784.0,
+    "eoh_change_pct": 0.5,
+    "fcst_gap": -45056.05042,
+    "actual": 46174.43,
+    "fcst": 91230.48042
+  },
+  {
+    "style": "TRESTLES TWILL WIDELEG",
+    "product_class": "BOTTOMS",
+    "eoh_start": 7656.0,
+    "eoh_now": 13907.0,
+    "eoh_change_pct": 81.6,
+    "fcst_gap": -44348.02347,
+    "actual": 137934.42,
+    "fcst": 182282.44347
+  },
+  {
+    "style": "V1 COACH JACKET",
+    "product_class": "OUTERWEAR",
+    "eoh_start": 5452.0,
+    "eoh_now": 6052.0,
+    "eoh_change_pct": 11.0,
+    "fcst_gap": -39520.18425,
+    "actual": 38442.48,
+    "fcst": 77962.66425
+  },
+  {
+    "style": "KORE SHORT LINED 5\"",
+    "product_class": "BOTTOMS",
+    "eoh_start": 50292.0,
+    "eoh_now": 90276.0,
+    "eoh_change_pct": 79.5,
+    "fcst_gap": -35785.02449,
+    "actual": 139256.825,
+    "fcst": 175041.84949
+  },
+  {
+    "style": "BEACH FLEECE SHIRT JACKET",
+    "product_class": "OUTERWEAR",
+    "eoh_start": 3563.0,
+    "eoh_now": 7690.0,
+    "eoh_change_pct": 115.8,
+    "fcst_gap": -33241.92086,
+    "actual": 30233.3,
+    "fcst": 63475.22086
+  },
+  {
+    "style": "MERINO FINE GAUGE WOOL SWEATER",
+    "product_class": "LAYERS",
+    "eoh_start": 3715.0,
+    "eoh_now": 5740.0,
+    "eoh_change_pct": 54.5,
+    "fcst_gap": -31745.01825,
+    "actual": 8444.288,
+    "fcst": 40189.30625
+  }
+]

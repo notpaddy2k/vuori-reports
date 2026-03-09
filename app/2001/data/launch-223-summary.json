@@ -1,0 +1,12 @@
+[
+  {
+    "total_demand": 6235672.414060607,
+    "total_fcst": 5708907.41128,
+    "fcst_gap": 526765.002780607,
+    "fcst_var_pct": 9.2,
+    "units": 79121,
+    "eoh": 765184,
+    "return_rate": 6.9,
+    "n_styles": 178
+  }
+]

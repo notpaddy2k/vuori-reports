@@ -1,0 +1,402 @@
+[
+  {
+    "sub_class": "SHORT SLEEVE",
+    "actual": 2591909.1472575758,
+    "fcst": 2112857.80643,
+    "eoh": 1028681.0,
+    "returns": 323926.9427424243,
+    "gap": 479051.3408275759,
+    "vs_fcst_pct": 22.7,
+    "return_rate": 11.1
+  },
+  {
+    "sub_class": "SHORTS",
+    "actual": 2673195.734,
+    "fcst": 2320413.98416,
+    "eoh": 1117252.0,
+    "returns": 284253.646,
+    "gap": 352781.7498400002,
+    "vs_fcst_pct": 15.2,
+    "return_rate": 9.6
+  },
+  {
+    "sub_class": "SKIRTS",
+    "actual": 369154.25,
+    "fcst": 196798.67584,
+    "eoh": 68070.0,
+    "returns": 38056.13,
+    "gap": 172355.57416,
+    "vs_fcst_pct": 87.6,
+    "return_rate": 9.3
+  },
+  {
+    "sub_class": "PANTS",
+    "actual": 3722310.188642857,
+    "fcst": 3595836.7336399998,
+    "eoh": 890429.0,
+    "returns": 1115416.4613571428,
+    "gap": 126473.4550028574,
+    "vs_fcst_pct": 3.5,
+    "return_rate": 23.1
+  },
+  {
+    "sub_class": "JACKETS",
+    "actual": 1018497.697,
+    "fcst": 927988.65751,
+    "eoh": 241644.0,
+    "returns": 338814.403,
+    "gap": 90509.03949,
+    "vs_fcst_pct": 9.8,
+    "return_rate": 25.0
+  },
+  {
+    "sub_class": "SWIM BOTTOMS",
+    "actual": 128739.815,
+    "fcst": 57808.33694,
+    "eoh": 7527.0,
+    "returns": 10061.885,
+    "gap": 70931.47806,
+    "vs_fcst_pct": 122.7,
+    "return_rate": 7.2
+  },
+  {
+    "sub_class": "SWIM TOPS",
+    "actual": 111587.9075,
+    "fcst": 49664.78343,
+    "eoh": 7538.0,
+    "returns": 9149.8625,
+    "gap": 61923.12407,
+    "vs_fcst_pct": 124.7,
+    "return_rate": 7.6
+  },
+  {
+    "sub_class": "BOARDSHORTS",
+    "actual": 169930.37,
+    "fcst": 119429.19224,
+    "eoh": 41688.0,
+    "returns": 20959.8,
+    "gap": 50501.17776,
+    "vs_fcst_pct": 42.3,
+    "return_rate": 11.0
+  },
+  {
+    "sub_class": "LONG SLEEVE",
+    "actual": 636494.16,
+    "fcst": 597802.16937,
+    "eoh": 205173.0,
+    "returns": 165010.44,
+    "gap": 38691.99063,
+    "vs_fcst_pct": 6.5,
+    "return_rate": 20.6
+  },
+  {
+    "sub_class": "SWEATERS",
+    "actual": 162089.2855,
+    "fcst": 123787.76095,
+    "eoh": 20426.0,
+    "returns": 54537.0445,
+    "gap": 38301.52455,
+    "vs_fcst_pct": 30.9,
+    "return_rate": 25.2
+  },
+  {
+    "sub_class": "ROMPERS",
+    "actual": 38189.2,
+    "fcst": 0.0,
+    "eoh": 4504.0,
+    "returns": 7233.4,
+    "gap": 38189.2,
+    "vs_fcst_pct": null,
+    "return_rate": 15.9
+  },
+  {
+    "sub_class": "ONE PIECES",
+    "actual": 65561.44,
+    "fcst": 28661.62661,
+    "eoh": 2316.0,
+    "returns": 6584.64,
+    "gap": 36899.81339,
+    "vs_fcst_pct": 128.7,
+    "return_rate": 9.1
+  },
+  {
+    "sub_class": "VESTS",
+    "actual": 118197.7433333333,
+    "fcst": 90106.11212,
+    "eoh": 33896.0,
+    "returns": 50629.7766666667,
+    "gap": 28091.6312133333,
+    "vs_fcst_pct": 31.2,
+    "return_rate": 30.0
+  },
+  {
+    "sub_class": "JUMPSUITS",
+    "actual": 21381.74,
+    "fcst": 0.0,
+    "eoh": 6527.0,
+    "returns": 4608.8,
+    "gap": 21381.74,
+    "vs_fcst_pct": null,
+    "return_rate": 17.7
+  },
+  {
+    "sub_class": "PULLOVERS",
+    "actual": 13897.87,
+    "fcst": 0.0,
+    "eoh": 5494.0,
+    "returns": 6485.2,
+    "gap": 13897.87,
+    "vs_fcst_pct": null,
+    "return_rate": 31.8
+  },
+  {
+    "sub_class": "HIP PACKS",
+    "actual": 28624.675,
+    "fcst": 18726.56616,
+    "eoh": 13169.0,
+    "returns": 4058.415,
+    "gap": 9898.10884,
+    "vs_fcst_pct": 52.9,
+    "return_rate": 12.4
+  },
+  {
+    "sub_class": "RASHGUARDS",
+    "actual": 12823.33,
+    "fcst": 5913.35934,
+    "eoh": 286.0,
+    "returns": 999.6,
+    "gap": 6909.97066,
+    "vs_fcst_pct": 116.9,
+    "return_rate": 7.2
+  },
+  {
+    "sub_class": "SPORTSBRAS",
+    "actual": 516234.1836666667,
+    "fcst": 509792.60599,
+    "eoh": 162680.0,
+    "returns": 102081.8363333333,
+    "gap": 6441.5776766667,
+    "vs_fcst_pct": 1.3,
+    "return_rate": 16.5
+  },
+  {
+    "sub_class": "DUFFLE",
+    "actual": 14334.34,
+    "fcst": 9126.13753,
+    "eoh": 1478.0,
+    "returns": 1098.86,
+    "gap": 5208.20247,
+    "vs_fcst_pct": 57.1,
+    "return_rate": 7.1
+  },
+  {
+    "sub_class": "SHOES",
+    "actual": 4990.0,
+    "fcst": 0.0,
+    "eoh": 926.0,
+    "returns": 968.0,
+    "gap": 4990.0,
+    "vs_fcst_pct": null,
+    "return_rate": 16.2
+  },
+  {
+    "sub_class": "BRIEFS",
+    "actual": 39313.36,
+    "fcst": 34713.37882,
+    "eoh": 96077.0,
+    "returns": 2988.5,
+    "gap": 4599.98118,
+    "vs_fcst_pct": 13.3,
+    "return_rate": 7.1
+  },
+  {
+    "sub_class": "TOTES",
+    "actual": 19800.632,
+    "fcst": 15717.63201,
+    "eoh": 49529.0,
+    "returns": 2032.408,
+    "gap": 4082.99999,
+    "vs_fcst_pct": 26.0,
+    "return_rate": 9.3
+  },
+  {
+    "sub_class": "SNOW",
+    "actual": 7027.15,
+    "fcst": 3993.59974,
+    "eoh": 473.0,
+    "returns": 4960.65,
+    "gap": 3033.55026,
+    "vs_fcst_pct": 76.0,
+    "return_rate": 41.4
+  },
+  {
+    "sub_class": "CREW",
+    "actual": 52813.882,
+    "fcst": 49943.91714,
+    "eoh": 114604.0,
+    "returns": 3009.228,
+    "gap": 2869.96486,
+    "vs_fcst_pct": 5.7,
+    "return_rate": 5.4
+  },
+  {
+    "sub_class": "GRAPHICS",
+    "actual": 2396.92,
+    "fcst": 0.0,
+    "eoh": 3335.0,
+    "returns": 949.82,
+    "gap": 2396.92,
+    "vs_fcst_pct": null,
+    "return_rate": 28.4
+  },
+  {
+    "sub_class": "BACKPACKS",
+    "actual": 10067.17,
+    "fcst": 8183.35966,
+    "eoh": 3966.0,
+    "returns": 1287.4,
+    "gap": 1883.81034,
+    "vs_fcst_pct": 23.0,
+    "return_rate": 11.3
+  },
+  {
+    "sub_class": "HYDRATION",
+    "actual": 2231.63,
+    "fcst": 671.31805,
+    "eoh": 2703.0,
+    "returns": 53.94,
+    "gap": 1560.31195,
+    "vs_fcst_pct": 232.4,
+    "return_rate": 2.4
+  },
+  {
+    "sub_class": "MISC AXS",
+    "actual": 1935.6,
+    "fcst": 678.72448,
+    "eoh": 4107.0,
+    "returns": 91.2,
+    "gap": 1256.87552,
+    "vs_fcst_pct": 185.2,
+    "return_rate": 4.5
+  },
+  {
+    "sub_class": "FITNESS AXS",
+    "actual": 2063.6,
+    "fcst": 1341.11278,
+    "eoh": 5012.0,
+    "returns": 618.4,
+    "gap": 722.48722,
+    "vs_fcst_pct": 53.9,
+    "return_rate": 23.1
+  },
+  {
+    "sub_class": "POUCHES",
+    "actual": 3588.2,
+    "fcst": 3319.93336,
+    "eoh": 6305.0,
+    "returns": 383.2,
+    "gap": 268.26664,
+    "vs_fcst_pct": 8.1,
+    "return_rate": 9.6
+  },
+  {
+    "sub_class": "HATS",
+    "actual": 66120.4008333333,
+    "fcst": 65852.58123,
+    "eoh": 72863.0,
+    "returns": 7667.5091666667,
+    "gap": 267.8196033333,
+    "vs_fcst_pct": 0.4,
+    "return_rate": 10.4
+  },
+  {
+    "sub_class": "PERSONAL CARE",
+    "actual": 1484.69,
+    "fcst": 1405.07075,
+    "eoh": 1635.0,
+    "returns": 41.19,
+    "gap": 79.61925,
+    "vs_fcst_pct": 5.7,
+    "return_rate": 2.7
+  },
+  {
+    "sub_class": "NO SHOW",
+    "actual": 8487.98,
+    "fcst": 8409.8556,
+    "eoh": 59251.0,
+    "returns": 453.6,
+    "gap": 78.1244,
+    "vs_fcst_pct": 0.9,
+    "return_rate": 5.1
+  },
+  {
+    "sub_class": "HAIR",
+    "actual": 10643.53,
+    "fcst": 10901.84525,
+    "eoh": 20249.0,
+    "returns": 538.6,
+    "gap": -258.31525,
+    "vs_fcst_pct": -2.4,
+    "return_rate": 4.8
+  },
+  {
+    "sub_class": "ANKLE",
+    "actual": 12412.8,
+    "fcst": 14555.95152,
+    "eoh": 46538.0,
+    "returns": 732.6,
+    "gap": -2143.15152,
+    "vs_fcst_pct": -14.7,
+    "return_rate": 5.6
+  },
+  {
+    "sub_class": "DRESSES",
+    "actual": 115289.6733333333,
+    "fcst": 121524.27623,
+    "eoh": 22647.0,
+    "returns": 22631.3266666667,
+    "gap": -6234.6028966667,
+    "vs_fcst_pct": -5.1,
+    "return_rate": 16.4
+  },
+  {
+    "sub_class": "SLEEVELESS",
+    "actual": 1324764.455151515,
+    "fcst": 1344801.50524,
+    "eoh": 436994.0,
+    "returns": 269582.9848484849,
+    "gap": -20037.050088485,
+    "vs_fcst_pct": -1.5,
+    "return_rate": 16.9
+  },
+  {
+    "sub_class": "JOGGERS",
+    "actual": 1302301.0863333333,
+    "fcst": 1364492.69654,
+    "eoh": 605809.0,
+    "returns": 349674.5636666667,
+    "gap": -62191.6102066666,
+    "vs_fcst_pct": -4.6,
+    "return_rate": 21.2
+  },
+  {
+    "sub_class": "LEGGINGS",
+    "actual": 1329137.8764588744,
+    "fcst": 1478228.17308,
+    "eoh": 340859.0,
+    "returns": 361127.3535411255,
+    "gap": -149090.2966211257,
+    "vs_fcst_pct": -10.1,
+    "return_rate": 21.4
+  },
+  {
+    "sub_class": "SWEATSHIRTS",
+    "actual": 2288865.4369891775,
+    "fcst": 2485495.11877,
+    "eoh": 461728.0,
+    "returns": 593559.2730108225,
+    "gap": -196629.6817808226,
+    "vs_fcst_pct": -7.9,
+    "return_rate": 20.6
+  }
+]

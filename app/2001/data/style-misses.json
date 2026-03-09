@@ -1,0 +1,222 @@
+[
+  {
+    "style": "W'S VUORI VINTAGE WIDELEG 32\"",
+    "product_class": "BOTTOMS",
+    "gender": "WOMENS",
+    "actual": 0.0,
+    "fcst": 150986.47894,
+    "gap": -150986.47894,
+    "vs_fcst_pct": -100.0,
+    "eoh": 8623.0,
+    "return_rate": 0.0
+  },
+  {
+    "style": "HALO MINI FZ HOODIE",
+    "product_class": "LAYERS",
+    "gender": "WOMENS",
+    "actual": 190372.2216666667,
+    "fcst": 306294.57657,
+    "gap": -115922.3549033333,
+    "vs_fcst_pct": -37.8,
+    "eoh": 33411.0,
+    "return_rate": 25.7
+  },
+  {
+    "style": "TRESTLES TWILL TIE SHORT",
+    "product_class": "BOTTOMS",
+    "gender": "WOMENS",
+    "actual": 18490.0,
+    "fcst": 127226.89829,
+    "gap": -108736.89829,
+    "vs_fcst_pct": -85.5,
+    "eoh": 23879.0,
+    "return_rate": 9.5
+  },
+  {
+    "style": "HALO ESSENTIAL WIDELEG",
+    "product_class": "BOTTOMS",
+    "gender": "WOMENS",
+    "actual": 323041.3816666667,
+    "fcst": 429574.97918,
+    "gap": -106533.5975133333,
+    "vs_fcst_pct": -24.8,
+    "eoh": 125925.0,
+    "return_rate": 22.5
+  },
+  {
+    "style": "CORONADO PANT 30\"",
+    "product_class": "BOTTOMS",
+    "gender": "MENS",
+    "actual": 52210.6246428571,
+    "fcst": 126786.6581,
+    "gap": -74576.0334571429,
+    "vs_fcst_pct": -58.8,
+    "eoh": 18900.0,
+    "return_rate": 25.7
+  },
+  {
+    "style": "SEDONA SEAMS CREW",
+    "product_class": "LAYERS",
+    "gender": "WOMENS",
+    "actual": 147404.48,
+    "fcst": 210775.93753,
+    "gap": -63371.45753,
+    "vs_fcst_pct": -30.1,
+    "eoh": 15931.0,
+    "return_rate": 19.1
+  },
+  {
+    "style": "PONTO PERFORMANCE JOGGER 28\"",
+    "product_class": "BOTTOMS",
+    "gender": "MENS",
+    "actual": 117843.3663333333,
+    "fcst": 173518.76472,
+    "gap": -55675.3983866667,
+    "vs_fcst_pct": -32.1,
+    "eoh": 62482.0,
+    "return_rate": 17.5
+  },
+  {
+    "style": "VUORI ALLTHEFEELS STRAPPY BACK",
+    "product_class": "TOPS",
+    "gender": "WOMENS",
+    "actual": 71394.99,
+    "fcst": 127036.29287,
+    "gap": -55641.30287,
+    "vs_fcst_pct": -43.8,
+    "eoh": 19930.0,
+    "return_rate": 7.0
+  },
+  {
+    "style": "VUORI ALLTHEFORM LEGGING",
+    "product_class": "BOTTOMS",
+    "gender": "WOMENS",
+    "actual": 133677.325,
+    "fcst": 184864.35978,
+    "gap": -51187.03478,
+    "vs_fcst_pct": -27.7,
+    "eoh": 35572.0,
+    "return_rate": 24.6
+  },
+  {
+    "style": "VUORI ALLTHEFEELS LEGGING",
+    "product_class": "BOTTOMS",
+    "gender": "WOMENS",
+    "actual": 400167.7996969697,
+    "fcst": 451063.08295,
+    "gap": -50895.2832530303,
+    "vs_fcst_pct": -11.3,
+    "eoh": 74925.0,
+    "return_rate": 11.1
+  },
+  {
+    "style": "W'S VUORI VINTAGE OS DENIM JKT",
+    "product_class": "OUTERWEAR",
+    "gender": "WOMENS",
+    "actual": 0.0,
+    "fcst": 50026.90642,
+    "gap": -50026.90642,
+    "vs_fcst_pct": -100.0,
+    "eoh": 4976.0,
+    "return_rate": 0.0
+  },
+  {
+    "style": "PONTO FULL ZIP HOODIE",
+    "product_class": "LAYERS",
+    "gender": "MENS",
+    "actual": 63301.8,
+    "fcst": 111395.671,
+    "gap": -48093.871,
+    "vs_fcst_pct": -43.2,
+    "eoh": 17689.0,
+    "return_rate": 11.4
+  },
+  {
+    "style": "PERFORMANCE JOGGER",
+    "product_class": "BOTTOMS",
+    "gender": "WOMENS",
+    "actual": 383774.02,
+    "fcst": 430448.65134,
+    "gap": -46674.63134,
+    "vs_fcst_pct": -10.8,
+    "eoh": 123406.0,
+    "return_rate": 17.0
+  },
+  {
+    "style": "S/S PLAID BUTTON DOWN",
+    "product_class": "TOPS",
+    "gender": "MENS",
+    "actual": 29549.95,
+    "fcst": 74776.35277,
+    "gap": -45226.40277,
+    "vs_fcst_pct": -60.5,
+    "eoh": 14752.0,
+    "return_rate": 15.8
+  },
+  {
+    "style": "HALO MODERN PULLOVER HOODIE",
+    "product_class": "LAYERS",
+    "gender": "WOMENS",
+    "actual": 46174.43,
+    "fcst": 91230.48042,
+    "gap": -45056.05042,
+    "vs_fcst_pct": -49.4,
+    "eoh": 8784.0,
+    "return_rate": 21.9
+  },
+  {
+    "style": "TRESTLES TWILL WIDELEG",
+    "product_class": "BOTTOMS",
+    "gender": "WOMENS",
+    "actual": 137934.42,
+    "fcst": 182282.44347,
+    "gap": -44348.02347,
+    "vs_fcst_pct": -24.3,
+    "eoh": 13907.0,
+    "return_rate": 10.0
+  },
+  {
+    "style": "L/S PLAID BUTTON DOWN",
+    "product_class": "TOPS",
+    "gender": "MENS",
+    "actual": 17310.9533333333,
+    "fcst": 60792.39951,
+    "gap": -43481.4461766667,
+    "vs_fcst_pct": -71.5,
+    "eoh": 4458.0,
+    "return_rate": 19.8
+  },
+  {
+    "style": "V1 COACH JACKET",
+    "product_class": "OUTERWEAR",
+    "gender": "MENS",
+    "actual": 38442.48,
+    "fcst": 77962.66425,
+    "gap": -39520.18425,
+    "vs_fcst_pct": -50.7,
+    "eoh": 6052.0,
+    "return_rate": 13.6
+  },
+  {
+    "style": "VUORI ALLTHEFEELS SHIRRED CROP",
+    "product_class": "BOTTOMS",
+    "gender": "WOMENS",
+    "actual": 15480.31,
+    "fcst": 54206.81272,
+    "gap": -38726.50272,
+    "vs_fcst_pct": -71.4,
+    "eoh": 3776.0,
+    "return_rate": 1.6
+  },
+  {
+    "style": "KORE SHORT LINED 5\"",
+    "product_class": "BOTTOMS",
+    "gender": "MENS",
+    "actual": 139256.825,
+    "fcst": 175041.84949,
+    "gap": -35785.02449,
+    "vs_fcst_pct": -20.4,
+    "eoh": 90276.0,
+    "return_rate": 8.1
+  }
+]

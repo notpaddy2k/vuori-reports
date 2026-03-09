@@ -1,0 +1,47 @@
+[
+  {
+    "fiscal_week_id": 202605,
+    "week_end": "2026-02-08",
+    "actual": 3372.14,
+    "fcst": 3455.8,
+    "units": 75.0,
+    "eoh": 349399.0,
+    "vs_fcst_pct": -2.4
+  },
+  {
+    "fiscal_week_id": 202606,
+    "week_end": "2026-02-15",
+    "actual": 22235.95,
+    "fcst": 12705.99,
+    "units": 312.0,
+    "eoh": 575794.0,
+    "vs_fcst_pct": 75.0
+  },
+  {
+    "fiscal_week_id": 202607,
+    "week_end": "2026-02-22",
+    "actual": 60528.61,
+    "fcst": 51524.34,
+    "units": 890.0,
+    "eoh": 655122.0,
+    "vs_fcst_pct": 17.5
+  },
+  {
+    "fiscal_week_id": 202608,
+    "week_end": "2026-03-01",
+    "actual": 6988416.305,
+    "fcst": 6963302.0600000005,
+    "units": 93361.0,
+    "eoh": 809110.0,
+    "vs_fcst_pct": 0.4
+  },
+  {
+    "fiscal_week_id": 202609,
+    "week_end": "2026-03-08",
+    "actual": 6235672.414060606,
+    "fcst": 5708907.41128,
+    "units": 79121.0,
+    "eoh": 765184.0,
+    "vs_fcst_pct": 9.2
+  }
+]

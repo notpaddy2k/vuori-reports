@@ -1,0 +1,222 @@
+[
+  {
+    "style": "VILLA WIDELEG",
+    "product_class": "BOTTOMS",
+    "gender": "WOMENS",
+    "actual": 433164.56,
+    "fcst": 240240.24533,
+    "gap": 192924.31467,
+    "vs_fcst_pct": 80.3,
+    "eoh": 28234.0,
+    "return_rate": 8.8
+  },
+  {
+    "style": "VILLA WIDELEG - SHORT",
+    "product_class": "BOTTOMS",
+    "gender": "WOMENS",
+    "actual": 256620.75,
+    "fcst": 125875.90386,
+    "gap": 130744.84614,
+    "vs_fcst_pct": 103.9,
+    "eoh": 17337.0,
+    "return_rate": 12.5
+  },
+  {
+    "style": "KORE SHORT LINED 7\"",
+    "product_class": "BOTTOMS",
+    "gender": "MENS",
+    "actual": 376780.6191666666,
+    "fcst": 268824.75388,
+    "gap": 107955.8652866667,
+    "vs_fcst_pct": 40.2,
+    "eoh": 166788.0,
+    "return_rate": 9.2
+  },
+  {
+    "style": "ENERGY TEE LONG",
+    "product_class": "TOPS",
+    "gender": "WOMENS",
+    "actual": 187385.5233333333,
+    "fcst": 90568.21765,
+    "gap": 96817.3056833333,
+    "vs_fcst_pct": 106.9,
+    "eoh": 30613.0,
+    "return_rate": 13.8
+  },
+  {
+    "style": "DAILY SKIRT 14.5\"",
+    "product_class": "BOTTOMS",
+    "gender": "WOMENS",
+    "actual": 187334.63,
+    "fcst": 92009.72937,
+    "gap": 95324.90063,
+    "vs_fcst_pct": 103.6,
+    "eoh": 35122.0,
+    "return_rate": 8.6
+  },
+  {
+    "style": "VENTANA JACKET",
+    "product_class": "OUTERWEAR",
+    "gender": "WOMENS",
+    "actual": 116323.352,
+    "fcst": 34792.91343,
+    "gap": 81530.43857,
+    "vs_fcst_pct": 234.3,
+    "eoh": 3709.0,
+    "return_rate": 15.7
+  },
+  {
+    "style": "STRATO TECH TEE",
+    "product_class": "TOPS",
+    "gender": "MENS",
+    "actual": 509748.7483333334,
+    "fcst": 438380.00296,
+    "gap": 71368.7453733333,
+    "vs_fcst_pct": 16.3,
+    "eoh": 325630.0,
+    "return_rate": 9.7
+  },
+  {
+    "style": "VILLA SHORT",
+    "product_class": "BOTTOMS",
+    "gender": "WOMENS",
+    "actual": 218057.17,
+    "fcst": 150519.68366,
+    "gap": 67537.48634,
+    "vs_fcst_pct": 44.9,
+    "eoh": 70110.0,
+    "return_rate": 5.8
+  },
+  {
+    "style": "MILES ANKLE PANT",
+    "product_class": "BOTTOMS",
+    "gender": "WOMENS",
+    "actual": 182674.6741666667,
+    "fcst": 116276.5248,
+    "gap": 66398.1493666667,
+    "vs_fcst_pct": 57.1,
+    "eoh": 27284.0,
+    "return_rate": 13.6
+  },
+  {
+    "style": "HARDKORE SHORT LINED 7\"",
+    "product_class": "BOTTOMS",
+    "gender": "MENS",
+    "actual": 126647.15,
+    "fcst": 67122.03527,
+    "gap": 59525.11473,
+    "vs_fcst_pct": 88.7,
+    "eoh": 10923.0,
+    "return_rate": 10.6
+  },
+  {
+    "style": "SUNDAY PERFORMANCE SHORT 8\"",
+    "product_class": "BOTTOMS",
+    "gender": "MENS",
+    "actual": 121117.925,
+    "fcst": 63088.01959,
+    "gap": 58029.90541,
+    "vs_fcst_pct": 92.0,
+    "eoh": 46939.0,
+    "return_rate": 8.9
+  },
+  {
+    "style": "TECH WAFFLE PULLOVER HOODIE",
+    "product_class": "LAYERS",
+    "gender": "MENS",
+    "actual": 145167.995,
+    "fcst": 88394.63787,
+    "gap": 56773.35713,
+    "vs_fcst_pct": 64.2,
+    "eoh": 6802.0,
+    "return_rate": 3.0
+  },
+  {
+    "style": "VUORI ALLTHEFEELS CRST LEGGING",
+    "product_class": "BOTTOMS",
+    "gender": "WOMENS",
+    "actual": 110044.4025,
+    "fcst": 54380.36349,
+    "gap": 55664.03901,
+    "vs_fcst_pct": 102.4,
+    "eoh": 6707.0,
+    "return_rate": 22.4
+  },
+  {
+    "style": "ENERGY TEE",
+    "product_class": "TOPS",
+    "gender": "WOMENS",
+    "actual": 95737.57,
+    "fcst": 40168.37899,
+    "gap": 55569.19101,
+    "vs_fcst_pct": 138.3,
+    "eoh": 14114.0,
+    "return_rate": 14.3
+  },
+  {
+    "style": "DAILY SPEED SHORT 2.5\"",
+    "product_class": "BOTTOMS",
+    "gender": "WOMENS",
+    "actual": 79360.49,
+    "fcst": 26129.34071,
+    "gap": 53231.14929,
+    "vs_fcst_pct": 203.7,
+    "eoh": 26651.0,
+    "return_rate": 7.9
+  },
+  {
+    "style": "VUORI META SHORT 8\"",
+    "product_class": "BOTTOMS",
+    "gender": "MENS",
+    "actual": 131611.4566666667,
+    "fcst": 80858.86562,
+    "gap": 50752.5910466667,
+    "vs_fcst_pct": 62.8,
+    "eoh": 42409.0,
+    "return_rate": 9.8
+  },
+  {
+    "style": "SUNDAY PERFORMANCE JOGGER 28\"",
+    "product_class": "BOTTOMS",
+    "gender": "MENS",
+    "actual": 281154.0883333333,
+    "fcst": 230683.2832,
+    "gap": 50470.8051333333,
+    "vs_fcst_pct": 21.9,
+    "eoh": 100380.0,
+    "return_rate": 15.3
+  },
+  {
+    "style": "L/S HALO CREW",
+    "product_class": "LAYERS",
+    "gender": "WOMENS",
+    "actual": 49989.4,
+    "fcst": 0.0,
+    "gap": 49989.4,
+    "vs_fcst_pct": null,
+    "eoh": 2264.0,
+    "return_rate": 6.8
+  },
+  {
+    "style": "VUORI META PANT ATHL SLIM 30\"",
+    "product_class": "BOTTOMS",
+    "gender": "MENS",
+    "actual": 165482.52,
+    "fcst": 119316.2583,
+    "gap": 46166.2617,
+    "vs_fcst_pct": 38.7,
+    "eoh": 28592.0,
+    "return_rate": 17.0
+  },
+  {
+    "style": "TUVALU TEE",
+    "product_class": "TOPS",
+    "gender": "MENS",
+    "actual": 151788.205,
+    "fcst": 107573.10856,
+    "gap": 44215.09644,
+    "vs_fcst_pct": 41.1,
+    "eoh": 53556.0,
+    "return_rate": 9.8
+  }
+]

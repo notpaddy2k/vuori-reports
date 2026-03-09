@@ -1,0 +1,112 @@
+[
+  {
+    "style": "VILLA WIDELEG",
+    "product_class": "BOTTOMS",
+    "gender": "WOMENS",
+    "actual": 330333.865,
+    "fcst": 166210.19669,
+    "gap": 164123.66831,
+    "vs_fcst_pct": 98.7,
+    "eoh": 13029.0,
+    "return_rate": 5.8
+  },
+  {
+    "style": "VILLA WIDELEG - SHORT",
+    "product_class": "BOTTOMS",
+    "gender": "WOMENS",
+    "actual": 120446.89,
+    "fcst": 62604.04185,
+    "gap": 57842.84815,
+    "vs_fcst_pct": 92.4,
+    "eoh": 9930.0,
+    "return_rate": 7.1
+  },
+  {
+    "style": "TECH WAFFLE PULLOVER HOODIE",
+    "product_class": "LAYERS",
+    "gender": "MENS",
+    "actual": 144326.655,
+    "fcst": 88394.63787,
+    "gap": 55932.01713,
+    "vs_fcst_pct": 63.3,
+    "eoh": 6760.0,
+    "return_rate": 2.9
+  },
+  {
+    "style": "VENTANA JACKET",
+    "product_class": "OUTERWEAR",
+    "gender": "WOMENS",
+    "actual": 76697.772,
+    "fcst": 23207.88367,
+    "gap": 53489.88833,
+    "vs_fcst_pct": 230.5,
+    "eoh": 2691.0,
+    "return_rate": 6.9
+  },
+  {
+    "style": "DAILY SKIRT 14.5\"",
+    "product_class": "BOTTOMS",
+    "gender": "WOMENS",
+    "actual": 92584.78,
+    "fcst": 40716.9484,
+    "gap": 51867.8316,
+    "vs_fcst_pct": 127.4,
+    "eoh": 2985.0,
+    "return_rate": 8.1
+  },
+  {
+    "style": "VUORI META HARRINGTON JACKET",
+    "product_class": "OUTERWEAR",
+    "gender": "MENS",
+    "actual": 52019.79,
+    "fcst": 7923.62575,
+    "gap": 44096.16425,
+    "vs_fcst_pct": 556.5,
+    "eoh": 1473.0,
+    "return_rate": 6.8
+  },
+  {
+    "style": "CLASSIC BIKINI BOTTOM",
+    "product_class": "WATER",
+    "gender": "WOMENS",
+    "actual": 59606.83,
+    "fcst": 19578.358,
+    "gap": 40028.472,
+    "vs_fcst_pct": 204.5,
+    "eoh": 1373.0,
+    "return_rate": 5.7
+  },
+  {
+    "style": "KORE SHORT LINED 7\"",
+    "product_class": "BOTTOMS",
+    "gender": "MENS",
+    "actual": 104509.49,
+    "fcst": 65166.53705,
+    "gap": 39342.95295,
+    "vs_fcst_pct": 60.4,
+    "eoh": 11653.0,
+    "return_rate": 3.9
+  },
+  {
+    "style": "MILES ANKLE PANT",
+    "product_class": "BOTTOMS",
+    "gender": "WOMENS",
+    "actual": 80628.3741666667,
+    "fcst": 42416.09364,
+    "gap": 38212.2805266667,
+    "vs_fcst_pct": 90.1,
+    "eoh": 3742.0,
+    "return_rate": 2.6
+  },
+  {
+    "style": "POSE COLUMN SKIRT",
+    "product_class": "BOTTOMS",
+    "gender": "WOMENS",
+    "actual": 63919.82,
+    "fcst": 26009.47431,
+    "gap": 37910.34569,
+    "vs_fcst_pct": 145.8,
+    "eoh": 50.0,
+    "return_rate": 10.9
+  }
+]

@@ -1,0 +1,152 @@
+[
+  {
+    "style": "HALO EASY WIDELEG PANT - SHORT",
+    "product_class": "BOTTOMS",
+    "gender": "WOMENS",
+    "actual": 38143.87,
+    "vs_fcst_pct": -8.5,
+    "eoh": 8707.0,
+    "return_rate": 52.6,
+    "fcst_gap": -3521.52419
+  },
+  {
+    "style": "ECHO INSULATED JACKET 2.0",
+    "product_class": "OUTERWEAR",
+    "gender": "MENS",
+    "actual": 20554.5116666667,
+    "vs_fcst_pct": 28.2,
+    "eoh": 4735.0,
+    "return_rate": 47.4,
+    "fcst_gap": 4521.9592666667
+  },
+  {
+    "style": "RESTORE OVERSIZED CREW 2.0",
+    "product_class": "LAYERS",
+    "gender": "WOMENS",
+    "actual": 18537.27,
+    "vs_fcst_pct": -63.2,
+    "eoh": 3478.0,
+    "return_rate": 45.7,
+    "fcst_gap": -31878.95226
+  },
+  {
+    "style": "VUORI VINTAGE JEAN CLASSIC 30\"",
+    "product_class": "BOTTOMS",
+    "gender": "MENS",
+    "actual": 41233.17,
+    "vs_fcst_pct": -33.8,
+    "eoh": 10504.0,
+    "return_rate": 44.3,
+    "fcst_gap": -21084.45079
+  },
+  {
+    "style": "RESTORE DOUBLE ZIP SWEATSHIRT",
+    "product_class": "LAYERS",
+    "gender": "WOMENS",
+    "actual": 29369.92,
+    "vs_fcst_pct": -20.4,
+    "eoh": 2152.0,
+    "return_rate": 44.1,
+    "fcst_gap": -7504.31889
+  },
+  {
+    "style": "HALO LOW RISE SLIM FLARE PANT",
+    "product_class": "BOTTOMS",
+    "gender": "WOMENS",
+    "actual": 11844.81,
+    "vs_fcst_pct": null,
+    "eoh": 9240.0,
+    "return_rate": 42.2,
+    "fcst_gap": 11844.81
+  },
+  {
+    "style": "ALPINE JACKET",
+    "product_class": "OUTERWEAR",
+    "gender": "WOMENS",
+    "actual": 24773.73,
+    "vs_fcst_pct": 223.0,
+    "eoh": 7743.0,
+    "return_rate": 41.9,
+    "fcst_gap": 17103.77927
+  },
+  {
+    "style": "CASCADE TECH CHINO ATH SLM 32\"",
+    "product_class": "BOTTOMS",
+    "gender": "MENS",
+    "actual": 11292.35,
+    "vs_fcst_pct": 127.9,
+    "eoh": 8881.0,
+    "return_rate": 41.8,
+    "fcst_gap": 6337.66445
+  },
+  {
+    "style": "LOU FULL ZIP JACKET",
+    "product_class": "OUTERWEAR",
+    "gender": "WOMENS",
+    "actual": 11957.13,
+    "vs_fcst_pct": null,
+    "eoh": 4465.0,
+    "return_rate": 41.1,
+    "fcst_gap": 11957.13
+  },
+  {
+    "style": "RESTORE MINI FULL ZIP HOODIE",
+    "product_class": "LAYERS",
+    "gender": "WOMENS",
+    "actual": 18821.3,
+    "vs_fcst_pct": -4.5,
+    "eoh": 6241.0,
+    "return_rate": 39.6,
+    "fcst_gap": -881.97344
+  },
+  {
+    "style": "VUORI ALLTHEFEELS STRT LEG - S",
+    "product_class": "BOTTOMS",
+    "gender": "WOMENS",
+    "actual": 13709.3975,
+    "vs_fcst_pct": -31.8,
+    "eoh": 1950.0,
+    "return_rate": 38.9,
+    "fcst_gap": -6403.75121
+  },
+  {
+    "style": "VUORI VINTAGE JEAN CLASSIC 32\"",
+    "product_class": "BOTTOMS",
+    "gender": "MENS",
+    "actual": 40061.34,
+    "vs_fcst_pct": -25.6,
+    "eoh": 12246.0,
+    "return_rate": 37.9,
+    "fcst_gap": -13790.58748
+  },
+  {
+    "style": "BOYFRIEND SWEATPANT",
+    "product_class": "BOTTOMS",
+    "gender": "WOMENS",
+    "actual": 16890.525,
+    "vs_fcst_pct": null,
+    "eoh": 6586.0,
+    "return_rate": 37.6,
+    "fcst_gap": 16890.525
+  },
+  {
+    "style": "HALO CAMI",
+    "product_class": "TOPS",
+    "gender": "WOMENS",
+    "actual": 43782.89,
+    "vs_fcst_pct": -11.2,
+    "eoh": 3502.0,
+    "return_rate": 37.4,
+    "fcst_gap": -5546.81141
+  },
+  {
+    "style": "CANYON INSULATED VEST",
+    "product_class": "OUTERWEAR",
+    "gender": "WOMENS",
+    "actual": 22146.34,
+    "vs_fcst_pct": -37.7,
+    "eoh": 5163.0,
+    "return_rate": 37.0,
+    "fcst_gap": -13426.72725
+  }
+]

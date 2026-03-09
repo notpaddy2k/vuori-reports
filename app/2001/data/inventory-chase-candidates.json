@@ -1,0 +1,152 @@
+[
+  {
+    "style": "VUORI ALLTHEFEELS CRST LEGGING",
+    "product_class": "BOTTOMS",
+    "eoh_start": 14154.0,
+    "eoh_now": 6707.0,
+    "eoh_change_pct": -52.6,
+    "fcst_gap": 55664.03901,
+    "actual": 110044.4025,
+    "fcst": 54380.36349
+  },
+  {
+    "style": "POSE COLUMN SKIRT",
+    "product_class": "BOTTOMS",
+    "eoh_start": 2737.0,
+    "eoh_now": 342.0,
+    "eoh_change_pct": -87.5,
+    "fcst_gap": 20860.36561,
+    "actual": 65182.32,
+    "fcst": 44321.95439
+  },
+  {
+    "style": "MILES JOGGER",
+    "product_class": "BOTTOMS",
+    "eoh_start": 2617.0,
+    "eoh_now": 1255.0,
+    "eoh_change_pct": -52.0,
+    "fcst_gap": 15474.9066666667,
+    "actual": 15474.9066666667,
+    "fcst": 0.0
+  },
+  {
+    "style": "L/S CRUSH PADDLE SUIT",
+    "product_class": "WATER",
+    "eoh_start": 461.0,
+    "eoh_now": 209.0,
+    "eoh_change_pct": -54.7,
+    "fcst_gap": 14849.2866,
+    "actual": 21908.64,
+    "fcst": 7059.3534
+  },
+  {
+    "style": "L/S CRUSH RASHGUARD",
+    "product_class": "WATER",
+    "eoh_start": 581.0,
+    "eoh_now": 286.0,
+    "eoh_change_pct": -50.8,
+    "fcst_gap": 6909.97066,
+    "actual": 12823.33,
+    "fcst": 5913.35934
+  },
+  {
+    "style": "VILLA TROUSER SHORT",
+    "product_class": "BOTTOMS",
+    "eoh_start": 404.0,
+    "eoh_now": 200.0,
+    "eoh_change_pct": -50.5,
+    "fcst_gap": 6199.46,
+    "actual": 6199.46,
+    "fcst": 0.0
+  },
+  {
+    "style": "SEASIDE SWEATPANT 30\"",
+    "product_class": "BOTTOMS",
+    "eoh_start": 2833.0,
+    "eoh_now": 805.0,
+    "eoh_change_pct": -71.6,
+    "fcst_gap": 6174.81201,
+    "actual": 7536.8,
+    "fcst": 1361.98799
+  },
+  {
+    "style": "DAILY LEGGING - SHORT",
+    "product_class": "BOTTOMS",
+    "eoh_start": 1456.0,
+    "eoh_now": 518.0,
+    "eoh_change_pct": -64.4,
+    "fcst_gap": 5640.93,
+    "actual": 5640.93,
+    "fcst": 0.0
+  },
+  {
+    "style": "INVERSION RIB BRA",
+    "product_class": "BRAS",
+    "eoh_start": 1752.0,
+    "eoh_now": 832.0,
+    "eoh_change_pct": -52.5,
+    "fcst_gap": 4546.31,
+    "actual": 4546.31,
+    "fcst": 0.0
+  },
+  {
+    "style": "BIRCH CARGO PANT",
+    "product_class": "BOTTOMS",
+    "eoh_start": 417.0,
+    "eoh_now": 185.0,
+    "eoh_change_pct": -55.6,
+    "fcst_gap": 3872.8,
+    "actual": 3872.8,
+    "fcst": 0.0
+  },
+  {
+    "style": "\u00c9MILIE CASHMERE OS V-NECK",
+    "product_class": "LAYERS",
+    "eoh_start": 913.0,
+    "eoh_now": 190.0,
+    "eoh_change_pct": -79.2,
+    "fcst_gap": 3812.77,
+    "actual": 3812.77,
+    "fcst": 0.0
+  },
+  {
+    "style": "CANYON INSULATED VENTURE JKT",
+    "product_class": "OUTERWEAR",
+    "eoh_start": 1605.0,
+    "eoh_now": 456.0,
+    "eoh_change_pct": -71.6,
+    "fcst_gap": 3223.4,
+    "actual": 3223.4,
+    "fcst": 0.0
+  },
+  {
+    "style": "WAFFLE CREW",
+    "product_class": "TOPS",
+    "eoh_start": 1999.0,
+    "eoh_now": 724.0,
+    "eoh_change_pct": -63.8,
+    "fcst_gap": 3090.4,
+    "actual": 3090.4,
+    "fcst": 0.0
+  },
+  {
+    "style": "DASH ELEVATE SHORT",
+    "product_class": "BOTTOMS",
+    "eoh_start": 320.0,
+    "eoh_now": 110.0,
+    "eoh_change_pct": -65.6,
+    "fcst_gap": 2614.4766666667,
+    "actual": 2614.4766666667,
+    "fcst": 0.0
+  },
+  {
+    "style": "LUX SHORES JUMPSUIT",
+    "product_class": "DRESSES",
+    "eoh_start": 132.0,
+    "eoh_now": 22.0,
+    "eoh_change_pct": -83.3,
+    "fcst_gap": 2169.4,
+    "actual": 2169.4,
+    "fcst": 0.0
+  }
+]

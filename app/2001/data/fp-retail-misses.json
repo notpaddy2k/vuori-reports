@@ -1,0 +1,202 @@
+[
+  {
+    "style": "W'S VUORI VINTAGE WIDELEG 32\"",
+    "product_class": "BOTTOMS",
+    "gender": "WOMENS",
+    "fp_actual": 0.0,
+    "fp_fcst": 97591.41273,
+    "fp_gap": -97591.41273,
+    "vs_fcst_pct": -100.0,
+    "fp_eoh": 6608.0
+  },
+  {
+    "style": "HALO MINI FZ HOODIE",
+    "product_class": "LAYERS",
+    "gender": "WOMENS",
+    "fp_actual": 93584.5616666667,
+    "fp_fcst": 182139.75195,
+    "fp_gap": -88555.1902833333,
+    "vs_fcst_pct": -48.6,
+    "fp_eoh": 13924.0
+  },
+  {
+    "style": "CORONADO PANT 30\"",
+    "product_class": "BOTTOMS",
+    "gender": "MENS",
+    "fp_actual": 35785.1346428571,
+    "fp_fcst": 117150.87443,
+    "fp_gap": -81365.7397871429,
+    "vs_fcst_pct": -69.5,
+    "fp_eoh": 9657.0
+  },
+  {
+    "style": "HALO ESSENTIAL WIDELEG",
+    "product_class": "BOTTOMS",
+    "gender": "WOMENS",
+    "fp_actual": 190068.6616666667,
+    "fp_fcst": 258856.99563,
+    "fp_gap": -68788.3339633333,
+    "vs_fcst_pct": -26.6,
+    "fp_eoh": 81523.0
+  },
+  {
+    "style": "TRESTLES TWILL TIE SHORT",
+    "product_class": "BOTTOMS",
+    "gender": "WOMENS",
+    "fp_actual": 191.1,
+    "fp_fcst": 68051.00267,
+    "fp_gap": -67859.90267,
+    "vs_fcst_pct": -99.7,
+    "fp_eoh": 18826.0
+  },
+  {
+    "style": "CANYON INSULATED JACKET",
+    "product_class": "OUTERWEAR",
+    "gender": "WOMENS",
+    "fp_actual": 12016.98,
+    "fp_fcst": 74252.90868,
+    "fp_gap": -62235.92868,
+    "vs_fcst_pct": -83.8,
+    "fp_eoh": 3243.0
+  },
+  {
+    "style": "TRESTLES TWILL WIDELEG",
+    "product_class": "BOTTOMS",
+    "gender": "WOMENS",
+    "fp_actual": 65359.17,
+    "fp_fcst": 122251.56486,
+    "fp_gap": -56892.39486,
+    "vs_fcst_pct": -46.5,
+    "fp_eoh": 8970.0
+  },
+  {
+    "style": "SEDONA SEAMS CREW",
+    "product_class": "LAYERS",
+    "gender": "WOMENS",
+    "fp_actual": 104141.08,
+    "fp_fcst": 152204.58617,
+    "fp_gap": -48063.50617,
+    "vs_fcst_pct": -31.6,
+    "fp_eoh": 10281.0
+  },
+  {
+    "style": "PONTO PERFORMANCE JOGGER 28\"",
+    "product_class": "BOTTOMS",
+    "gender": "MENS",
+    "fp_actual": 68083.7363333333,
+    "fp_fcst": 115535.07901,
+    "fp_gap": -47451.3426766667,
+    "vs_fcst_pct": -41.1,
+    "fp_eoh": 36902.0
+  },
+  {
+    "style": "TECH WAFFLE CREW",
+    "product_class": "LAYERS",
+    "gender": "MENS",
+    "fp_actual": 66839.4933333333,
+    "fp_fcst": 107399.11202,
+    "fp_gap": -40559.6186866667,
+    "vs_fcst_pct": -37.8,
+    "fp_eoh": 13994.0
+  },
+  {
+    "style": "VUORI ALLTHEFEELS STRAPPY BACK",
+    "product_class": "TOPS",
+    "gender": "WOMENS",
+    "fp_actual": 162.8,
+    "fp_fcst": 39298.27839,
+    "fp_gap": -39135.47839,
+    "vs_fcst_pct": -99.6,
+    "fp_eoh": 10224.0
+  },
+  {
+    "style": "L/S PLAID BUTTON DOWN",
+    "product_class": "TOPS",
+    "gender": "MENS",
+    "fp_actual": 13694.4533333333,
+    "fp_fcst": 51120.3219,
+    "fp_gap": -37425.8685666667,
+    "vs_fcst_pct": -73.2,
+    "fp_eoh": 3316.0
+  },
+  {
+    "style": "V1 COACH JACKET",
+    "product_class": "OUTERWEAR",
+    "gender": "MENS",
+    "fp_actual": 26595.45,
+    "fp_fcst": 58755.79545,
+    "fp_gap": -32160.34545,
+    "vs_fcst_pct": -54.7,
+    "fp_eoh": 3027.0
+  },
+  {
+    "style": "W'S VUORI VINTAGE OS DENIM JKT",
+    "product_class": "OUTERWEAR",
+    "gender": "WOMENS",
+    "fp_actual": 0.0,
+    "fp_fcst": 31710.87851,
+    "fp_gap": -31710.87851,
+    "vs_fcst_pct": -100.0,
+    "fp_eoh": 2468.0
+  },
+  {
+    "style": "PONTO FULL ZIP HOODIE",
+    "product_class": "LAYERS",
+    "gender": "MENS",
+    "fp_actual": 36114.2,
+    "fp_fcst": 67593.19979,
+    "fp_gap": -31478.99979,
+    "vs_fcst_pct": -46.6,
+    "fp_eoh": 11097.0
+  },
+  {
+    "style": "VUORI ALLTHEFEELS SHIRRED CROP",
+    "product_class": "BOTTOMS",
+    "gender": "WOMENS",
+    "fp_actual": 5535.0,
+    "fp_fcst": 37007.85747,
+    "fp_gap": -31472.85747,
+    "vs_fcst_pct": -85.0,
+    "fp_eoh": 2043.0
+  },
+  {
+    "style": "HALO MODERN PULLOVER HOODIE",
+    "product_class": "LAYERS",
+    "gender": "WOMENS",
+    "fp_actual": 22097.02,
+    "fp_fcst": 53065.42992,
+    "fp_gap": -30968.40992,
+    "vs_fcst_pct": -58.4,
+    "fp_eoh": 5656.0
+  },
+  {
+    "style": "CANYON INSULATED VEST",
+    "product_class": "OUTERWEAR",
+    "gender": "WOMENS",
+    "fp_actual": 5004.01,
+    "fp_fcst": 35573.06725,
+    "fp_gap": -30569.05725,
+    "vs_fcst_pct": -85.9,
+    "fp_eoh": 3302.0
+  },
+  {
+    "style": "HALO MODERN SWEATPANT",
+    "product_class": "BOTTOMS",
+    "gender": "WOMENS",
+    "fp_actual": 18689.39,
+    "fp_fcst": 48872.63175,
+    "fp_gap": -30183.24175,
+    "vs_fcst_pct": -61.8,
+    "fp_eoh": 5966.0
+  },
+  {
+    "style": "BANKS SESSION SHORT UNLINED 7\"",
+    "product_class": "BOTTOMS",
+    "gender": "MENS",
+    "fp_actual": 650.94,
+    "fp_fcst": 29606.80954,
+    "fp_gap": -28955.86954,
+    "vs_fcst_pct": -97.8,
+    "fp_eoh": 6266.0
+  }
+]
