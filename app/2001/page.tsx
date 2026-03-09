@@ -6,6 +6,7 @@ import {
   BarChartComponent,
   DonutChart,
   DataTable,
+  Insight,
 } from "@/components/report";
 
 // --- Data imports ---
@@ -52,6 +53,9 @@ export default function Page() {
 
           {/* ===== Executive Summary ===== */}
           <TabsContent value="executive-summary">
+            <Insight>
+              <strong>DTC demand is +20% YoY and +7% above forecast this week.</strong> Ecommerce is driving the beat (+19% vs FCST) while Full-Price is slightly below forecast (-6.6%). Look at the weekly trend chart to see if this gap is widening or closing.
+            </Insight>
             {/* KPI Cards */}
             <div className="grid grid-cols-12 gap-4 mb-6">
               <div className="col-span-12 sm:col-span-6 lg:col-span-2">
@@ -151,6 +155,9 @@ export default function Page() {
 
           {/* ===== Channel Performance ===== */}
           <TabsContent value="channel-performance">
+            <Insight>
+              <strong>Ecommerce is the growth engine</strong> — beating forecast by +19% with +16% YoY growth. Full-Price stores are up +27% YoY but missing forecast by -6.6%. Watch the return rate: EC is at 20.2% vs Full-Price at 14.6%.
+            </Insight>
             {/* EC vs Full-Price — Latest Week */}
             <div className="grid grid-cols-12 gap-4 mb-6">
               <div className="col-span-12 lg:col-span-6">
@@ -217,6 +224,9 @@ export default function Page() {
 
           {/* ===== Product Mix ===== */}
           <TabsContent value="product-mix">
+            <Insight>
+              Look at the <strong>gender and end-use donut charts</strong> for demand concentration. Check which product classes are driving the forecast beat vs which are dragging — sort the product class table by &quot;vs FCST %&quot; to find the outliers.
+            </Insight>
             {/* By Gender */}
             <div className="grid grid-cols-12 gap-4 mb-6">
               <div className="col-span-12 lg:col-span-3">
@@ -350,6 +360,9 @@ export default function Page() {
 
           {/* ===== Full Price vs Markdown ===== */}
           <TabsContent value="full-price-markdown">
+            <Insight>
+              <strong>Full-price mix is 89.5% — healthy.</strong> Watch the trend line: is FP% holding steady or declining week-over-week? Compare TY vs LY bars to see if markdown activity is increasing.
+            </Insight>
             {/* Weekly FP vs MD Trend */}
             <div className="grid grid-cols-12 gap-4 mb-6">
               <div className="col-span-12">
@@ -443,6 +456,9 @@ export default function Page() {
 
           {/* ===== Returns ===== */}
           <TabsContent value="returns">
+            <Insight>
+              <strong>Return rate is 18.0%.</strong> The trend chart shows whether returns are spiking or stable. Sort the dimension table by &quot;Return Rate %&quot; to find which channels, genders, or categories have the highest return rates.
+            </Insight>
             {/* Weekly Returns Trend */}
             <div className="grid grid-cols-12 gap-4 mb-6">
               <div className="col-span-12">
@@ -493,6 +509,9 @@ export default function Page() {
 
           {/* ===== Forecast Gap Analysis ===== */}
           <TabsContent value="forecast-gap">
+            <Insight>
+              <strong>Where are we beating/missing forecast?</strong> Ecommerce is +$1.8M above forecast while Full-Price is -$556K below. Drill into the end-use and product class charts to pinpoint which categories are creating the gap.
+            </Insight>
             {/* Gap by Channel */}
             <div className="grid grid-cols-12 gap-4 mb-6">
               <div className="col-span-12 lg:col-span-6">

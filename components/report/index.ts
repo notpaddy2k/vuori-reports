@@ -29,3 +29,4 @@ export const DataTable = dynamic(
 export { KpiCard } from "./kpi-card";
 export { PivotTable } from "./pivot-table";
 export { RankedList } from "./ranked-list";
+export { Insight } from "./insight";
